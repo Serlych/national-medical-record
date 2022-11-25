@@ -11,15 +11,35 @@ def main():
     with open("./data/patients_medicalhistory.csv") as fd:
         patients_csv = csv.DictReader(fd)
 
-        for patient in patients_csv:
+        for row in patients_csv:
+            patient = {
+                "NSS": row['NSS'],
+                "Nombre": row['Nombre'],
+                "Apellidos": row['Apellidos'],
+                "Edad": row['Edad'],
+                "Fecha_de_Nacimiento": row['Fecha_de_Nacimiento'],
+                "Ciudad_de_Nacimiento": row['Ciudad_de_Nacimiento'],
+                "Tipo_de_Sangre": row['Tipo_de_Sangre'],
+                "IMC": row['IMC'],
+                "Alergias": row['Alergias'].split(),
+                "Ultima_Consulta": row["Ultima_Consulta"],
+                "Padecimientos": row['Padecimientos'].split(),
+                "Historial_de_Consultas": row["Historial_de_Consultas"].split('/')
+            }
+
             print(patient)
+            # response = requests.post(BASE_URL + "/patient", json=patient)
+            # if not response.ok:
+            #     print(f"Failed to post patient {response} - {row}")
 
     # Colección de consultas
     with open("./data/patient_checkupshistory.csv") as fd:
         checkups_csv = csv.DictReader(fd)
 
         for row in checkups_csv:
-            print(row)
+            checkup = {
+                "NSS": row['NSS'],
+            }
 
     # Colección de medicamentos
     with open("./data/patients_medshistory.csv") as fd:
@@ -38,9 +58,9 @@ def main():
                 }
             }
 
-            response = requests.post(BASE_URL + "/prescription", json=prescription)
-            if not response.ok:
-                print(f"Failed to post medication {response} - {row}")
+            # response = requests.post(BASE_URL + "/prescription", json=prescription)
+            # if not response.ok:
+            #     print(f"Failed to post medication {response} - {row}")
 
     # Colección de pruebas clínicas
     with open("./data/patient_labshistory.csv") as fd:

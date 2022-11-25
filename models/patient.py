@@ -15,7 +15,7 @@ class Patient(BaseModel):
     IMC: float = Field(...)
     Alergias: list = Field(...)
     Ultima_Consulta: str = Field(...)
-    Padecimientos: str = Field(...)
+    Padecimientos: list = Field(...)
     Historial_de_Consultas: list = Field(...)
 
     class Config:
@@ -31,9 +31,9 @@ class Patient(BaseModel):
                 "Tipo_de_Sangre": "A+",
                 "IMC": 41.42,
                 "Alergias": ["Gluten"],
-                "Ultima Consulta": "29/09/2013 00:00",
-                "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": ["4ab7a800b1eddedbd9fcc513"]
+                "Ultima_Consulta": "29/09/2013 00:00",
+                "Padecimientos": ["Cirrosis"],
+                "Historial_de_Consultas": ["objectId"]
             }
         }
 
@@ -49,7 +49,7 @@ class PatientUpdate(BaseModel):
     IMC: Optional[float]
     Alergias: Optional[list]
     Ultima_Consulta: Optional[str]
-    Padecimientos: Optional[str]
+    Padecimientos: Optional[list]
     Historial_de_Consultas: Optional[list]
 
     class Config:
@@ -65,7 +65,7 @@ class PatientUpdate(BaseModel):
                 "IMC": 41.42,
                 "Alergias": ["Gluten"],
                 "Ultima Consulta": "29/09/2013 00:00",
-                "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": ["4ab7a800b1eddedbd9fcc513"]
+                "Padecimientos": ["Cirrosis"],
+                "Historial_de_Consultas": ["objectId"]
             }
         }
