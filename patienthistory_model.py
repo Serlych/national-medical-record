@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 class Patient(BaseModel):
-    id: str = Field(default_factory=uuid.uuid4, alias="_id")
+    #id: str = Field(alias="_id")
     NSS: str = Field(...)
     Nombre: str = Field(...)
     Apellidos: str = Field (...)
@@ -13,7 +13,7 @@ class Patient(BaseModel):
     Ciudad_de_Nacimiento: str = Field(...)
     Tipo_de_Sangre: str = Field(...)
     IMC: float = Field(...)
-    Alergias: str = Field(...)
+    Alergias: list = Field(...)
     Ultima_Consulta: str = Field(...)
     Padecimientos: str = Field(...)
     Historial_de_Consultas: list = Field(...)
@@ -22,7 +22,6 @@ class Patient(BaseModel):
         allow_population_by_field_name = True ##
         schema_extra = {
             "example": {
-                "_id": "68c9eb13-a596-43ec-a5d4-984fe0a42fee",
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "Nombre": "Hector",
                 "Apellidos": "Merino",
@@ -31,11 +30,10 @@ class Patient(BaseModel):
                 "Ciudad_de_Nacimiento": "Guadalajara",
                 "Tipo_de_Sangre": "A+",
                 "IMC": 41.42,
-                "Alergias": "Gluten",
+                "Alergias": [ "Gluten" ],
                 "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": ["23737d5e-8d99-43c8-80d2-8228027408f4"] 
- 
+                "Historial_de_Consultas": [ "4ab7a800b1eddedbd9fcc513"  ]
             }
         }
 
@@ -49,7 +47,7 @@ class PatientUpdate(BaseModel):
     Ciudad_de_Nacimiento: Optional[str]
     Tipo_de_Sangre: Optional[str]
     IMC: Optional[float]
-    Alergias: Optional[str]
+    Alergias: Optional[list]
     Ultima_Consulta: Optional[str]
     Padecimientos:  Optional[str]
     Historial_de_Consultas: Optional[list]
@@ -65,9 +63,9 @@ class PatientUpdate(BaseModel):
                 "Ciudad_de_Nacimiento": "Guadalajara",
                 "Tipo_de_Sangre": "A+",
                 "IMC": 41.42,
-                "Alergias": "Gluten",
+                "Alergias": [ "Gluten" ],
                 "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": ["23737d5e-8d99-43c8-80d2-8228027408f4"] 
+                "Historial_de_Consultas": [ "4ab7a800b1eddedbd9fcc513"  ]
             }
         }
