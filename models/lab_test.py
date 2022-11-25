@@ -14,12 +14,11 @@ class LabTest(BaseModel):
         schema_extra = {
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "4ab7a800b1eddedbd9fcc513",
+                "Consulta": "objectId",
                 "Pruebas": [{
-                    "Nombre de la prueba": "Colesterol",
+                    "Nombre_de_la_Prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
-                    "Interpretacion": "Resultados Normales",
-                    "URL de Resultados": "www.laboratorio.com/resultados"
+                    "URL_de_Resultados": "www.laboratorio.com/resultados"
                 }]
             }
         }
@@ -34,12 +33,11 @@ class LabTestUpdate(BaseModel):
         schema_extra = {
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "4ab7a800b1eddedbd9fcc513",
+                "Consulta": "objectId",
                 "Pruebas": [{
-                    "Nombre de la prueba": "Colesterol",
+                    "Nombre_de_la_Prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
-                    "Interpretacion": "Resultados Normales",
-                    "URL de Resultados": "www.laboratorio.com/resultados"
+                    "URL_de_Resultados": "www.laboratorio.com/resultados"
                 }]
             }
         }

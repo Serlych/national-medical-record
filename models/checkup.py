@@ -21,8 +21,8 @@ class Checkup(BaseModel):
                 "Nombre_del_Medico": "Dr. Carmen Robledo",
                 "Cedula_Profesional": "57918810",
                 "Diagnostico": "Gastritis",
-                "Receta": ["0b49a8ab094db7cfedf36fca"],
-                "Pruebas_de_Laboratorio": ["bfbc02745bd8cc62cb0d605f"]
+                "Receta": ["objectId"],
+                "Pruebas_de_Laboratorio": ["objectId"]
             }
         }
 
@@ -40,7 +40,7 @@ class CheckupUpdate(BaseModel):
                 "Nombre_del_Medico": "Dr. Carmen Robledo",
                 "Cedula_Profesional": "57918810",
                 "Diagnostico": "Gastritis",
-                "Receta": ["0b49a8ab094db7cfedf36fca"],
-                "Pruebas_de_Laboratorio": ["bfbc02745bd8cc62cb0d605f"]
+                "Receta": ["objectId"],
+                "Pruebas_de_Laboratorio": ["objectId"]
             }
         }
