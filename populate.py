@@ -13,16 +13,13 @@ def main():
 
         for patient in patients_csv:
             print(patient)
-            # response = requests.post(BASE_URL + "/patient", json=patient)
-            # if not response.ok:
-            #     print(f"Failed to post patient {response} - {patient}")
 
     # Colección de consultas
     with open("./data/patient_checkupshistory.csv") as fd:
-        consultations_csv = csv.DictReader(fd)
+        checkups_csv = csv.DictReader(fd)
 
-        for consultation in consultations_csv:
-            print(consultation)
+        for row in checkups_csv:
+            print(row)
 
     # Colección de medicamentos
     with open("./data/patients_medshistory.csv") as fd:
@@ -31,7 +28,7 @@ def main():
         for row in prescriptions_csv:
             prescription = {
                 "NSS": row['NSS'],
-                "Consulta": "",
+                "Consulta": "any",
                 "Medicamentos": {
                     "Nombre_del_Medicamento": row['Nombre_del_Medicamento'],
                     "Dosis_capsulas": row['Dosis_capsulas'],
@@ -47,10 +44,10 @@ def main():
 
     # Colección de pruebas clínicas
     with open("./data/patient_labshistory.csv") as fd:
-        labtest_csv = csv.DictReader(fd)
+        lab_tests_csv = csv.DictReader(fd)
 
-        for labtest in labtest_csv:
-            print(labtest)
+        for row in lab_tests_csv:
+            print(row)
 
 
 if __name__ == "__main__":
