@@ -4,43 +4,47 @@ from pydantic import BaseModel, Field
 
 
 class Checkup(BaseModel):
-    NSS: str = Field(...)
-    Fecha: str = Field(...)
-    Medico_Tratante: str = Field(...)
-    Cedula_Profesional: str = Field(...)
-    Diagnostico: str = Field(...)
-    Receta: list = Field(...)
-    Pruebas_de_Laboratorio: list = Field(...)
+    nss: str = Field(...)
+    fecha: str = Field(...)
+    medico_tratante: str = Field(...)
+    cedula_profesional: str = Field(...)
+    diagnostico: str = Field(...)
+    recetas: list = Field(...)
+    pruebas_de_laboratorio: list = Field(...)
 
     class Config:
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Fecha": "27/05/2022 00:00",
-                "Medico Tratante": "Dr. Carmen Robledo",
-                "Cedula Profesional": "57918810",
-                "Diagnostico": "Gastritis",
-                "Receta": ["objectId"],
-                "Pruebas de Laboratorio": ["objectId"]
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "fecha": "27/05/2022 00:00",
+                "medico_tratante": "Dr. Carmen Robledo",
+                "cedula_profesional": "57918810",
+                "diagnostico": "Gastritis",
+                "recetas": ["objectId"],
+                "pruebas_de_laboratorio": ["objectId"]
             }
         }
 
 
 class CheckupUpdate(BaseModel):
-    NSS: Optional[str]
-    Consulta: Optional[str]
-    Pruebas: Optional[list]
+    nss: Optional[str]
+    fecha: Optional[str]
+    medico_tratante: Optional[str]
+    cedula_profesional: Optional[str]
+    diagnostico: Optional[str]
+    recetas: Optional[list]
+    pruebas_de_laboratorio: Optional[list]
 
     class Config:
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Fecha": "27/05/2022 00:00",
-                "Medico Tratante": "Dr. Carmen Robledo",
-                "Cedula Profesional": "57918810",
-                "Diagnostico": "Gastritis",
-                "Receta": ["objectId"],
-                "Pruebas de Laboratorio": ["objectId"]
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "fecha": "27/05/2022 00:00",
+                "medico_tratante": "Dr. Carmen Robledo",
+                "cedula_profesional": "57918810",
+                "diagnostico": "Gastritis",
+                "recetas": ["objectId"],
+                "pruebas_de_laboratorio": ["objectId"]
             }
         }

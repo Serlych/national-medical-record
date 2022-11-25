@@ -5,67 +5,67 @@ from pydantic import BaseModel, Field
 
 
 class Patient(BaseModel):
-    NSS: str = Field(...)
-    Nombre: str = Field(...)
-    Apellidos: str = Field(...)
-    Edad: int = Field(...)
-    Fecha_de_Nacimiento: str = Field(...)
-    Ciudad_de_Nacimiento: str = Field(...)
-    Tipo_de_Sangre: str = Field(...)
-    IMC: float = Field(...)
-    Alergias: list = Field(...)
-    Ultima_Consulta: str = Field(...)
-    Padecimientos: list = Field(...)
-    Historial_de_Consultas: list = Field(...)
+    nss: str = Field(...)
+    nombre: str = Field(...)
+    apellidos: str = Field(...)
+    edad: int = Field(...)
+    fecha_de_nacimiento: str = Field(...)
+    ciudad_de_nacimiento: str = Field(...)
+    tipo_de_sangre: str = Field(...)
+    imc: float = Field(...)
+    alergias: list = Field(...)
+    ultima_consulta: str = Field(...)
+    padecimientos: list = Field(...)
+    consultas: list = Field(...)
 
     class Config:
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Nombre": "Hector",
-                "Apellidos": "Merino",
-                "Edad": 35,
-                "Fecha de Nacimiento": "06/09/1998 00:00",
-                "Ciudad de Nacimiento": "Guadalajara",
-                "Tipo de Sangre": "A+",
-                "IMC": 41.42,
-                "Alergias": ["Gluten"],
-                "Ultima Consulta": "29/09/2013 00:00",
-                "Padecimientos": ["Cirrosis"],
-                "Historial de Consultas": ["objectId"]
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "nombre": "Hector",
+                "apellidos": "Merino",
+                "edad": 35,
+                "fecha_de_nacimiento": "06/09/1998 00:00",
+                "ciudad_de_nacimiento": "Guadalajara",
+                "tipo_de_sangre": "A+",
+                "imc": 41.42,
+                "alergias": ["Gluten"],
+                "ultima_consulta": "29/09/2013 00:00",
+                "padecimientos": ["Cirrosis"],
+                "consultas": ["objectId"]
             }
         }
 
 
 class PatientUpdate(BaseModel):
-    NSS: Optional[str]
-    Nombre: Optional[str]
-    Apellidos: Optional[str]
-    Edad: Optional[int]
-    Fecha_de_Nacimiento: Optional[str]
-    Ciudad_de_Nacimiento: Optional[str]
-    Tipo_de_Sangre: Optional[str]
-    IMC: Optional[float]
-    Alergias: Optional[list]
-    Ultima_Consulta: Optional[str]
-    Padecimientos: Optional[list]
-    Historial_de_Consultas: Optional[list]
+    nss: Optional[str]
+    nombre: Optional[str]
+    apellidos: Optional[str]
+    edad: Optional[int]
+    fecha_de_nacimiento: Optional[str]
+    ciudad_de_nacimiento: Optional[str]
+    tipo_de_sangre: Optional[str]
+    imc: Optional[float]
+    alergias: Optional[list]
+    ultima_consulta: Optional[str]
+    padecimientos: Optional[list]
+    consultas: Optional[list]
 
     class Config:
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Nombre": "Hector",
-                "Apellidos": "Merino",
-                "Edad": 35,
-                "Fecha de Nacimiento": "06/09/1998 00:00",
-                "Ciudad de Nacimiento": "Guadalajara",
-                "Tipo de Sangre": "A+",
-                "IMC": 41.42,
-                "Alergias": ["Gluten"],
-                "Ultima Consulta": "29/09/2013 00:00",
-                "Padecimientos": ["Cirrosis"],
-                "Historial de Consultas": ["objectId"]
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "nombre": "Hector",
+                "apellidos": "Merino",
+                "edad": 35,
+                "fecha_de_nacimiento": "06/09/1998 00:00",
+                "ciudad_de_nacimiento": "Guadalajara",
+                "tipo_de_sangre": "A+",
+                "imc": 41.42,
+                "alergias": ["Gluten"],
+                "ultima_consulta": "29/09/2013 00:00",
+                "padecimientos": ["Cirrosis"],
+                "consultas": ["objectId"]
             }
         }
