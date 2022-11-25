@@ -19,8 +19,8 @@ class LabTest(BaseModel):
                     "Nombre de la prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
                     "Interpretacion": "Resultados Normales",
-                    "URL de Resultados": "www.laboratorio.com/resultados"}
-                ]
+                    "URL de Resultados": "www.laboratorio.com/resultados"
+                }]
             }
         }
 
@@ -39,7 +39,7 @@ class LabTestUpdate(BaseModel):
                     "Nombre de la prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
                     "Interpretacion": "Resultados Normales",
-                    "URL de Resultados": "www.laboratorio.com/resultados"}
-                ]
+                    "URL de Resultados": "www.laboratorio.com/resultados"
+                }]
             }
         }
