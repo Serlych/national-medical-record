@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import csv
-
-from fastapi import requests
+import requests
 
 BASE_URL = "http://localhost:8000"
 
