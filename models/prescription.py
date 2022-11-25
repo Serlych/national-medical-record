@@ -5,43 +5,43 @@ from pydantic import BaseModel, Field
 
 
 class Prescription(BaseModel):
-    NSS: str = Field(...)
-    Consulta: str = Field(...)
-    Medicamento: list = Field(...)
+    nss: str = Field(...)
+    consulta: str = Field(...)
+    medicamentos: list = Field(...)
 
     class Config:
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "objectId",
-                "Medicamentos": [{
-                    "Nombre del Medicamento": "AMOXICILINA",
-                    "Dosis (capsulas)": 0,
-                    "Gramaje (mg)": 19,
-                    "Frecuencia (c/hrs)": 65,
-                    "Duracion (dias)": 39
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "consulta": "objectId",
+                "medicamentos": [{
+                    "nombre": "AMOXICILINA",
+                    "dosis": 0,
+                    "gramaje": 19,
+                    "frecuencia": 65,
+                    "duracion": 39
                 }]
             }
         }
 
 
 class PrescriptionUpdate(BaseModel):
-    NSS: Optional[str]
-    Consulta: Optional[str]
-    Medicamento: Optional[list]
+    nss: Optional[str]
+    consulta: Optional[str]
+    medicamentos: Optional[list]
 
     class Config:
         schema_extra = {
             "example": {
-                "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "objectId",
-                "Medicamentos": [{
-                    "Nombre del Medicamento": "AMOXICILINA",
-                    "Dosis (capsulas)": 0,
-                    "Gramaje (mg)": 19,
-                    "Frecuencia (c/hrs)": 65,
-                    "Duracion (dias)": 39
+                "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
+                "consulta": "objectId",
+                "medicamentos": [{
+                    "nombre": "AMOXICILINA",
+                    "dosis": 0,
+                    "gramaje": 19,
+                    "frecuencia": 65,
+                    "duracion": 39
                 }]
             }
         }

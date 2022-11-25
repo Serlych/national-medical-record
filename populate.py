@@ -2,6 +2,11 @@
 import csv
 import requests
 
+from routes.patient import coll as patient_endpoint
+from routes.checkup import coll as checkup_endpoint
+from routes.prescription import coll as prescription_endpoint
+from routes.lab_test import coll as lab_test_endpoint
+
 BASE_URL = "http://localhost:8000"
 
 
@@ -32,7 +37,7 @@ def main():
                 "historial_de_consulta": row["historial_de_consulta"].split("/")
             }
 
-            post("patient", patient)
+            post(patient_endpoint, patient)
 
     # Colección de consultas
     with open("./data/patient_checkupshistory.csv") as fd:
@@ -49,7 +54,7 @@ def main():
                 "pruebas_de_laboratorio": []
             }
 
-            post("checkup", checkup)
+            post(checkup_endpoint, checkup)
 
     # Colección de medicamentos
     with open("./data/Meds.csv") as fd:
@@ -68,7 +73,7 @@ def main():
                 }
             }
 
-            post("prescription", prescription)
+            post(prescription_endpoint, prescription)
 
     # Colección de pruebas clínicas
     with open("./data/patient_labshistory.csv") as fd:
@@ -85,7 +90,7 @@ def main():
                 }]
             }
 
-            post("lab_test", lab_test)
+            post(lab_test_endpoint, lab_test)
 
 
 if __name__ == "__main__":
