@@ -1,4 +1,4 @@
-NSS,Nombre del paciente,ID Consulta,Fecha,Nombre_del_Medico,Cedula_Profesional,Diagnostico,Receta,Pruebas_de_Laboratorio,,,,
+nss,Nombre del paciente,ID Consulta,fecha,medico_tratante,cedula_profesional,diagnostico,receta,pruebas_de_laboratorio,,,,
 191eaffe-7e05-4f66-9916-faf3e0926cd0,Agustin Canto,c4cc01f7-6a23-4c1e-bf58-cf45c8c35d59,27/05/2022 00:00,Dr. Carmen Robledo,57918810,Diabetes,LORATADINA,Trigliceridos,,,,
 191eaffe-7e05-4f66-9916-faf3e0926cd0,Agustin Canto,f0cc3531-3655-42d1-8002-0657153d5dbe,21/10/2012 00:00,Dr. Oswaldo Huerta,12819955,Ulceras,"TRAMADOL, ACIDO ACETILSALICILICO",Ultrasonido de Prostata,,,,
 191eaffe-7e05-4f66-9916-faf3e0926cd0,Agustin Canto,adb6b25b-be5d-4cde-8b3c-68bc1c7ebbba,03/06/2022 00:00,Dr. Francisco Huerta,51511543,Ulceras,"LORATADINA, N/A, DIFENIDOL",Colesterol,,,,

@@ -18,18 +18,18 @@ def main():
 
         for row in patients_csv:
             patient = {
-                "NSS": row["NSS"],
-                "Nombre": row["Nombre"],
-                "Apellidos": row["Apellidos"],
-                "Edad": row["Edad"],
-                "Fecha de Nacimiento": row["Fecha_de_Nacimiento"],
-                "Ciudad de Nacimiento": row["Ciudad_de_Nacimiento"],
-                "Tipo de Sangre": row["Tipo_de_Sangre"],
-                "IMC": row["IMC"],
-                "Alergias": row["Alergias"].split(),
-                "Ultima Consulta": row["Ultima_Consulta"],
-                "Padecimientos": row["Padecimientos"].split(),
-                "Historial de Consultas": row["Historial_de_Consultas"].split("/")
+                "nss": row["nss"],
+                "nombre": row["nombre"],
+                "apellidos": row["apellidos"],
+                "edad": row["edad"],
+                "fecha_de_nacimiento": row["fecha_de_nacimiento"],
+                "ciudad_de_nacimiento": row["ciudad_de_nacimiento"],
+                "tipo_de_sangre": row["tipo_de_sangre"],
+                "imc": row["imc"],
+                "alergias": row["alergias"].split(),
+                "ultima_consulta": row["ultima_consulta"],
+                "padecimientos": row["consultas"].split(),
+                "historial_de_consulta": row["historial_de_consulta"].split("/")
             }
 
             post("patient", patient)
@@ -40,13 +40,13 @@ def main():
 
         for row in checkups_csv:
             checkup = {
-                "NSS": row["NSS"],
-                "Fecha": row["Fecha"],
-                "Medico Tratante": row["Nombre_del_Medico"],
-                "Cedula Profesional": row["Cedula_Profesional"],
-                "Diagnostico": row["Diagnostico"],
-                "Receta": [],
-                "Pruebas de Laboratorio": []
+                "nss": row["nss"],
+                "fecha": row["fecha"],
+                "medico_tratante": row["medico_tratante"],
+                "cedula_profesional": row["cedula_profesional"],
+                "diagnostico": row["diagnostico"],
+                "recetas": [],
+                "pruebas_de_laboratorio": []
             }
 
             post("checkup", checkup)
@@ -57,14 +57,14 @@ def main():
 
         for row in prescriptions_csv:
             prescription = {
-                "NSS": row["NSS"],
-                "Consulta": "any",
-                "Medicamentos": {
-                    "Nombre del Medicamento": row["Nombre_del_Medicamento"],
-                    "Dosis (capsulas)": row["Dosis_capsulas"],
-                    "Gramaje (mg)": row["Gramaje_mg"],
-                    "Frecuencia (c/hrs)": row["Frecuencia_hrs"],
-                    "Duracion (dias)": row["Duracion_dias"]
+                "nss": row["nss"],
+                "consulta": "any",
+                "medicamentos": {
+                    "nombre": row["nombre"],
+                    "dosis": row["dosis"],
+                    "gramaje": row["gramaje"],
+                    "frecuencia": row["frecuencia"],
+                    "duracion": row["duracion"]
                 }
             }
 
@@ -76,12 +76,12 @@ def main():
 
         for row in lab_tests_csv:
             lab_test = {
-                "NSS": row["NSS"],
-                "Consulta": "any",
-                "Pruebas": [{
-                    "Nombre de la Prueba": row["Pruebas de Laboratorio"],
-                    "Fecha": row["Fecha de Consulta"],
-                    "URL de Resultados": "cdn.lab-test-results.com/test_url"
+                "nss": row["nss"],
+                "consulta": "any",
+                "pruebas": [{
+                    "nombre": row["nombre"],
+                    "fecha": row["fecha"],
+                    "url": "cdn.lab-test-results.com/test_url"
                 }]
             }
 
