@@ -16,9 +16,9 @@ class LabTest(BaseModel):
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "Consulta": "objectId",
                 "Pruebas": [{
-                    "Nombre_de_la_Prueba": "Colesterol",
+                    "Nombre de la Prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
-                    "URL_de_Resultados": "www.laboratorio.com/resultados"
+                    "URL de Resultados": "www.laboratorio.com/resultados"
                 }]
             }
         }
@@ -35,9 +35,9 @@ class LabTestUpdate(BaseModel):
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "Consulta": "objectId",
                 "Pruebas": [{
-                    "Nombre_de_la_Prueba": "Colesterol",
+                    "Nombre de la Prueba": "Colesterol",
                     "Fecha": "27/03/2022 00:00",
-                    "URL_de_Resultados": "www.laboratorio.com/resultados"
+                    "URL de Resultados": "www.laboratorio.com/resultados"
                 }]
             }
         }

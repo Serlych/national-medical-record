@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class Checkup(BaseModel):
     NSS: str = Field(...)
     Fecha: str = Field(...)
-    Nombre_del_Medico: str = Field(...)
+    Medico_Tratante: str = Field(...)
     Cedula_Profesional: str = Field(...)
     Diagnostico: str = Field(...)
     Receta: list = Field(...)
@@ -18,11 +18,11 @@ class Checkup(BaseModel):
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "Fecha": "27/05/2022 00:00",
-                "Nombre_del_Medico": "Dr. Carmen Robledo",
-                "Cedula_Profesional": "57918810",
+                "Medico Tratante": "Dr. Carmen Robledo",
+                "Cedula Profesional": "57918810",
                 "Diagnostico": "Gastritis",
                 "Receta": ["objectId"],
-                "Pruebas_de_Laboratorio": ["objectId"]
+                "Pruebas de Laboratorio": ["objectId"]
             }
         }
 
@@ -37,10 +37,10 @@ class CheckupUpdate(BaseModel):
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "Fecha": "27/05/2022 00:00",
-                "Nombre_del_Medico": "Dr. Carmen Robledo",
-                "Cedula_Profesional": "57918810",
+                "Medico Tratante": "Dr. Carmen Robledo",
+                "Cedula Profesional": "57918810",
                 "Diagnostico": "Gastritis",
                 "Receta": ["objectId"],
-                "Pruebas_de_Laboratorio": ["objectId"]
+                "Pruebas de Laboratorio": ["objectId"]
             }
         }

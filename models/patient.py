@@ -26,14 +26,14 @@ class Patient(BaseModel):
                 "Nombre": "Hector",
                 "Apellidos": "Merino",
                 "Edad": 35,
-                "Fecha_de_Nacimiento": "06/09/1998 00:00",
-                "Ciudad_de_Nacimiento": "Guadalajara",
-                "Tipo_de_Sangre": "A+",
+                "Fecha de Nacimiento": "06/09/1998 00:00",
+                "Ciudad de Nacimiento": "Guadalajara",
+                "Tipo de Sangre": "A+",
                 "IMC": 41.42,
                 "Alergias": ["Gluten"],
-                "Ultima_Consulta": "29/09/2013 00:00",
+                "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": ["Cirrosis"],
-                "Historial_de_Consultas": ["objectId"]
+                "Historial de Consultas": ["objectId"]
             }
         }
 
@@ -59,13 +59,13 @@ class PatientUpdate(BaseModel):
                 "Nombre": "Hector",
                 "Apellidos": "Merino",
                 "Edad": 35,
-                "Fecha_de_Nacimiento": "06/09/1998 00:00",
-                "Ciudad_de_Nacimiento": "Guadalajara",
-                "Tipo_de_Sangre": "A+",
+                "Fecha de Nacimiento": "06/09/1998 00:00",
+                "Ciudad de Nacimiento": "Guadalajara",
+                "Tipo de Sangre": "A+",
                 "IMC": 41.42,
                 "Alergias": ["Gluten"],
                 "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": ["Cirrosis"],
-                "Historial_de_Consultas": ["objectId"]
+                "Historial de Consultas": ["objectId"]
             }
         }

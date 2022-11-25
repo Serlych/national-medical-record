@@ -14,9 +14,9 @@ class Prescription(BaseModel):
         schema_extra = {
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "4ab7a800b1eddedbd9fcc513",
-                "Medicamento": [{
-                    "Nombre_del_Medicamento": "AMOXICILINA",
+                "Consulta": "objectId",
+                "Medicamentos": [{
+                    "Nombre del Medicamento": "AMOXICILINA",
                     "Dosis (capsulas)": 0,
                     "Gramaje (mg)": 19,
                     "Frecuencia (c/hrs)": 65,
@@ -35,9 +35,9 @@ class PrescriptionUpdate(BaseModel):
         schema_extra = {
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-                "Consulta": "4ab7a800b1eddedbd9fcc513",
-                "Medicamento": [{
-                    "Nombre_del_Medicamento": "AMOXICILINA",
+                "Consulta": "objectId",
+                "Medicamentos": [{
+                    "Nombre del Medicamento": "AMOXICILINA",
                     "Dosis (capsulas)": 0,
                     "Gramaje (mg)": 19,
                     "Frecuencia (c/hrs)": 65,
