@@ -1,0 +1,85 @@
+NSS,Nombre,Apellidos,Edad,Fecha_de_Nacimiento,Ciudad_de_Nacimiento,Tipo_de_Sangre,IMC,Alergias,Ultima_Consulta,Padecimientos,Historial_de_Consultas
+4e1b0ee8-fa7f-454e-8ec1-660d83a404fa,Barbara,Canto,30,28/07/1992 00:00,Guadalajara,B-,41.42,Ketamine,27/03/2022 00:00,Hipotiroidismo,32168bde-35e9-4b3e-ad4b-d09091c4bd88/5700e430-7c7b-452c-b4f2-684d2717f499
+68c9eb13-a596-43ec-a5d4-984fe0a42f9e,Hector,Merino,53,09/05/1969 00:00,Tecalitlan,B+,18.88,Ketorolaco,11/07/2015 00:00,Leucemia,cb67455d-6cb9-4d96-807c-75809c476b5d/56e4c2f9-4d84-48d4-a8a1-f20aacfa6681
+02e72991-f230-4398-b3d4-2e0bee0b2b37,Alfonso,Huerta,25,11/12/1997 00:00,Ocotlan,A-,17.03,N/A,07/05/2018 00:00,Cirrosis,2857cefd-164b-448c-b679-ca38f4e8a310/70d9297a-99c1-4c6e-81d4-841e3df599f7
+e59adf20-852e-482d-a2af-4ef05d3a7963,Federico,Lopez,94,01/03/1928 00:00,Villa Corona,B-,27.01,Ketorolaco,12/10/2012 00:00,Hipertension,7a3c2efe-0acc-4bff-83fd-fd119e149e38/61968785-ef7d-42b6-8625-55bb431245d4/4ce4af7c-7c6d-4aac-8a0f-c3e37a0c0256/eab93107-c4f6-4fe6-bfc3-60f3d2e7a945/1bbab128-4274-4470-b8ed-ffd1570ac48b/
+631500b0-6052-4836-9f2b-3f655f23060e,Eduardo,Merino,75,06/07/1947 00:00,Cocula,AB-,44.9,Gluten,27/10/2022 00:00,N/A,dd8b8d66-7639-49b9-af9d-13091f047971/51266f85-4013-4718-85bc-88492b07e220
+b3be7be1-18af-44d5-9952-5d6cfc97bff6,Federico,Garcia,28,19/10/1994 00:00,Zapopan,AB+,20.56,Polen,29/09/2013 00:00,Arritmia,059a72c8-f0c5-4e32-a335-e9e5e43fc82e/c8a6a591-12e8-4d4e-81e7-adbe3a70a17a/0ce82b30-4f8c-4a8e-be20-dee39287dfda
+dbe52e99-e240-40e2-ac79-5d77fee17463,Maria,Herrera,24,06/09/1998 00:00,Acatic,B-,23.99,Animales,06/12/2019 00:00,Diabetes,0d6e82c6-6d26-498b-bbe1-f522ec57b965
+7734603d-75f1-480e-9c42-f15f3ae23abc,Maria,Jimenez,100,25/04/1922 00:00,Ocotlan,B-,29.56,Leche,12/02/2015 00:00,Hipertension,6579da96-f9d1-4a4f-a395-019fd22881c1
+8bce0360-a8c9-4c50-82fe-a5e9d9b9feee,Oswaldo,Garcia,38,15/06/1984 00:00,Arandas,B+,34.9,Ketorolaco,11/07/2014 00:00,Parkinson,23737d5e-8d99-43c8-80d2-8228027408f4
+547ce276-b3ca-41a7-85c5-0c084ccd9816,Leopoldo,Mendoza,66,11/12/1956 00:00,San Martin de Bolanos,B-,21.84,Ibuprofeno,19/06/2021 00:00,Cirrosis,e1b4190a-550b-4ec2-8ce0-52d441f903ea/2121234e-7cb8-4d29-a32b-421395fe379e/2d84402e-1fc8-4deb-8616-91514f697411
+921179fb-f624-48f8-86e9-23b8fc5abd5e,Oswaldo,Jimenez,94,25/02/1928 00:00,Mazamitla,B+,43.77,N/A,09/07/2012 00:00,Insuficiencia Renal,8aea594d-83ef-4f85-b1ce-c7bb986089be/642fe511-aa27-435d-a526-5bfe19aecb95
+52beb863-1a02-4ef9-bfa3-743fce388be7,Jorge,Canto,87,18/01/1935 00:00,Arandas,O+,26.09,Animales,20/11/2017 00:00,VIH,e0f92a0a-a8ae-4c9f-92a2-44b9c959ae66/03111b63-5727-4aa8-be0f-e9d4ecf23db2
+c69892ce-4ef1-4cf7-bcc4-65b891484cf1,Carlos,Merino,89,04/06/1933 00:00,Ocotlan,AB+,32.39,Leche,29/07/2017 00:00,Esclerosis,98eabe9d-4646-44cb-9c5e-3301966617ba/23036f2a-6490-41e0-85ce-b68db0db5425
+e737bfb1-fc39-42a6-b47a-3104fc0dcb1d,Carmen,Torillo,90,19/02/1932 00:00,Ocotlan,A-,23.56,Animales,03/08/2015 00:00,VIH,3cad18b1-c9ef-4cf3-88fe-72abdbf6e777/e07ac48f-49b8-4d63-afd6-f4f5ee21359d
+337f2db7-3357-436c-aaaf-884331da62d9,Jose,Garcia,86,05/02/1936 00:00,Tequila,O-,19.6,Ibuprofeno,27/10/2012 00:00,Parkinson,2dd72885-b88b-48d8-ae36-b07e87298179/2d3b12f5-f531-4362-878c-7625494676f6
+37fd6ae9-8a4d-406b-b36c-a28014686800,Federico,Mendez,107,07/08/1915 00:00,Tala,B-,44.99,Amoxicilina,11/09/2012 00:00,Hipotiroidismo,27852588-5c89-4497-8898-c0582edadbc6/692040aa-a229-4158-997a-0fdf8150a043
+9a79ac2f-ffb3-40fa-aff9-c66a0df37ecd,Barbara,Oliveros,70,11/03/1952 00:00,Tala,O-,19.16,Cacahuates,04/04/2018 00:00,Artritis,67a35ece-ebcf-4065-95fb-f0b2a57f3c00/1a023399-3096-440b-b182-e6675dde28b1
+2913f1e3-bbe5-4f23-b932-dcd76592b348,Carlos,Barajas,83,02/05/1939 00:00,La Barca,A+,38.17,Mariscos,19/06/2015 00:00,Cirrosis,94e8694e-8c7e-4db5-b502-f2dd61c29871/11c33960-1359-4b2b-a9f6-26e58528eda6
+bfb3765a-84eb-4b9f-ae9e-66993123e37f,Alfonso,Garcia,105,14/12/1917 00:00,Bolanos,O+,44.06,Penicilina,08/07/2014 00:00,Parkinson,5df76b97-81a2-4fed-bc89-48e7f5a00ecc/89c892d9-9bb6-47ae-81a9-accae4b5c9bb
+82016f40-fde6-40bc-809f-f4786723aa96,Diana,Mendez,109,12/04/1913 00:00,Arandas,A+,34.08,Penicilina,26/05/2014 00:00,Diabetes,56a7cba8-515b-4c70-9877-ac10fdde7812/a47f83c3-dfe6-480d-b9a2-0769025d9989/92e84903-fcf1-4815-b4b0-a50c9f77ef9d/aab24f66-147f-4db9-a29d-12aa315e4130/0004b7b2-3ba0-4041-b592-259c429a6213/dfeb32a1-32e4-4c2f-a7ac-b32b25e3f59a
+021362c1-4705-4bc2-b3ab-90f08380d149,Juanita,Magana,46,19/02/1976 00:00,Acatic,B-,28.81,N/A,08/10/2012 00:00,Cirrosis,bc531570-d1c7-44cb-bf5d-57cb3cde699e/45ed5b9b-f065-417e-9231-07fd805d9537
+004a76c1-35d7-47d7-b208-21a5d70cbf03,Carmen,Barajas,73,19/05/1949 00:00,Zapopan,B-,37.02,Leche,05/09/2015 00:00,Alzheimer,47d8b9a8-0623-4e64-82d4-5aded8713d9a
+18e19a02-e6fd-4391-bcf4-28cf4b2bd2b9,Maria,Sanchez,45,04/04/1977 00:00,San Martin de Bolanos,B-,37.47,N/A,25/06/2012 00:00,N/A,bbd3a441-c9b8-452e-9058-dc81d0dd05ef/b40bc7c4-0a60-4dde-b23d-42917118e91e/4a54fe3f-231b-4cf2-936c-3136f9f7779e
+db9d2588-b716-427f-8840-fb1716580ff6,Carlos,Huerta,29,05/10/1993 00:00,Ocotlan,O+,41.49,Gluten,26/02/2016 00:00,Asma,b42cd8ba-a773-42e7-9413-b9e7cffa4856/5e064d6e-03a1-4ea0-9148-97903800d187
+162cda3b-fb5f-427d-890f-985101980a51,Leopoldo,Merino,93,24/09/1929 00:00,Mazamitla,O-,43.78,Penicilina,07/02/2019 00:00,N/A,04c3d0b4-2bfe-4e3f-8f8e-7da111a58039
+bfba57c0-493f-47b3-878a-67966b6f0cbe,Federico,Robledo,96,27/02/1926 00:00,Zapopan,A-,25.61,Gluten,19/07/2012 00:00,EPOC,b7606ab1-ef23-4d56-9b1a-f9767ad07a82
+871bfd6a-7bb6-4d04-b6c6-dc29eb13c33f,Maria,Lopez,60,15/01/1962 00:00,Acatic,B+,19.24,Gluten,29/03/2014 00:00,Arritmia,12a7f77f-c15b-459b-9858-5de0ebe62603
+b0051f47-f0e0-4ad5-bc4c-e2e8d14b4f71,Leopoldo,Sanchez,34,05/03/1988 00:00,Cocula,B+,19.08,Cacahuates,17/07/2013 00:00,Asma,12eab711-6ab3-41d3-abb3-e0ef4d35c4da
+cf854885-9a66-4c8d-ba56-1ad5ca81df95,Federico,Huerta,21,29/11/2001 00:00,Tecalitlan,A+,41.77,Polen,26/03/2022 00:00,Diabetes,78cedb82-dd18-44d6-aa9c-02f5a7b7558e/63fd01a4-57a5-4ab0-ab88-6818c5ec07e2
+022af44e-8ac9-4973-ae5d-30ca64bc61e7,Mario,Merino,45,23/04/1977 00:00,Guadalajara,B+,20.31,N/A,03/11/2022 00:00,Asma,e6a5d1c7-9fdc-486f-8792-6427b83c46e9
+95ecf702-7675-41ca-b7e8-71872fef08e5,Agustin,Lopez,35,27/06/1987 00:00,Acatic,O+,37.32,Amoxicilina,01/06/2013 00:00,Cirrosis,b6ddc8cc-50b6-405f-b6f3-96c85747199e
+b00cc17f-09b8-4dcd-9534-e9af07c36fa0,Ana,Torillo,55,08/10/1967 00:00,Acatic,A+,35.77,Ibuprofeno,25/06/2012 00:00,Esclerosis,bed3fe3f-38b4-4e34-8a15-fee1b8f9c2df
+aa546326-1c04-4651-87c8-7b9c52970ba9,Jorge,Larios,75,13/05/1947 00:00,Villa Corona,B+,28,Polvo,21/08/2012 00:00,EPOC,44a03adc-e8d4-45c7-bb03-90233e82b79a/d461b65c-bc32-4abe-9336-958eae05b590
+1d34c6cf-7807-497d-b1c9-07f240b33abe,Carmen,Garcia,83,30/01/1939 00:00,La Barca,B+,25.7,Polvo,02/05/2018 00:00,Epilepsia,2fee4a22-23fe-428e-a3df-e582bdb8442d/dcd461b5-e4eb-4c96-8f41-6672232b9818
+01b67bbc-a678-46eb-b535-fb26c47213b5,Barbara,Magana,78,12/07/1944 00:00,Zapotlan el Grande,B+,34.01,Leche,07/06/2018 00:00,VIH,f19d454a-de2d-4015-8c6e-6240f79f8f4d/738c54d8-4b66-4010-9513-0b974c6f0eff
+0846c663-8e79-4066-a015-545037a98960,Barbara,Lopez,73,25/06/1949 00:00,Guadalajara,AB-,30.92,Penicilina,27/11/2017 00:00,N/A,23cf661c-aae3-43b2-8cdb-f007154a1b37/438449a2-a807-4866-b96b-83fd8eabd658/cb90643e-9111-4a0c-94e6-fca03c926cdb/70bf14e6-cc5e-4da6-a7af-11f3b494f434
+f89e422c-d497-4d45-9945-d1b49f0d24e6,Jorge,Torillo,88,13/06/1934 00:00,Etzatlan,O+,18.23,Ibuprofeno,02/06/2018 00:00,Hipotiroidismo,f81ca904-7dbd-4523-bf21-7d2b0cd86192
+d7e88974-2fba-46e5-a7e2-bc00a2138fd0,Leopoldo,Oliveros,60,20/04/1962 00:00,Mascota,AB-,24.49,Polen,11/05/2019 00:00,Alzheimer,40064f8e-d1ab-4924-b74f-8936dcaae7e7
+cd20e9d6-3c7b-41a7-be29-10f44cfa4edf,Hector,Garcia,78,14/01/1944 00:00,Etzatlan,O+,26.04,Mariscos,20/04/2018 00:00,Asma,6627ff05-f12e-4037-9bd5-7b45777a9485/248c7e31-a925-4416-a967-5e8d09d17627/8bc9af1d-7bf0-4ec1-aef0-a7d0a108dd09
+428a1934-820f-4c83-8fc4-edefd967fe21,Francisco,Robledo,105,14/12/1917 00:00,Tlaquepaque,O+,28.94,Fentanilo,13/11/2019 00:00,Epilepsia,2791c44b-e6ea-49ab-891e-c60feb3f62c4/0e7e34fb-c9cc-4ed9-bd49-41f2110c11be/e5e86982-5a78-43c0-b484-d4275de2800e
+18ac947d-2a2c-41a1-9b82-a59ee5dc66ec,Alfonso,Osnaya,82,26/01/1940 00:00,Cocula,AB+,18.31,Gluten,10/02/2022 00:00,VIH,aeb1b89c-f907-43d8-8d8b-2413855fe600
+fb5c7c05-69c4-4fff-a1be-a94bfb78cdad,Ana,Chaparro,104,01/09/1918 00:00,Tequila,B+,23.09,Gluten,28/04/2015 00:00,Epilepsia,56998c0b-0776-4249-b146-4913641083a6
+53ce57f7-26dd-4c11-a0d2-8f53db71415a,Francisco,Herrera,46,21/11/1976 00:00,Acatic,A+,34.84,Ibuprofeno,15/07/2019 00:00,Epilepsia,d767d760-c9ff-479d-9a67-d4a1ddee0623/2190d0e6-837d-4de9-b6e5-820bd8d8aa84
+a991154e-f28d-4a47-9908-71b27238c377,Francisco,Larios,54,30/07/1968 00:00,Etzatlan,AB-,24.34,Polen,25/02/2019 00:00,EPOC,eb337a15-69be-4b07-baa1-564a5030c48d
+0eb1ac37-ebbd-443c-9163-d3b63b4497af,Alfonso,Oliveros,21,07/11/2001 00:00,Etzatlan,B+,39.2,Ketamine,01/09/2020 00:00,Leucemia,0fa2f72a-aa75-4553-9f91-e1ff352261b9
+eb397472-24a7-41b4-bc10-33a2bcd0ce0d,Agustin,Chabaud,78,30/12/1944 00:00,Arandas,O+,31.51,Penicilina,15/09/2016 00:00,Artritis,1f663496-85c6-458b-8b02-8743406b2baa
+e1cb1981-28b5-4560-b544-66ec38dfb346,Hector,Canto,55,07/11/1967 00:00,Villa Corona,O-,36.32,Gluten,17/06/2013 00:00,Epilepsia,0ea593a2-36b5-4607-aeab-4a567186e5d3
+4bebff5b-caa8-4546-9cc1-c734725345d9,Mario,Garcia,55,19/09/1967 00:00,Zapotlan el Grande,B-,18.07,Amoxicilina,18/03/2012 00:00,Diabetes,dbdd87ea-ee96-4240-be8c-027016397fe8
+29e9db5b-2b17-4f00-b017-8b310f99cf69,Mario,Barajas,20,26/04/2002 00:00,Ocotlan,O-,42.45,Leche,19/01/2022 00:00,Esclerosis,dce3261c-c650-4fc5-a8c3-f957d5f350a8
+559393c6-cf66-4af9-9a43-c3cd5312595a,Leopoldo,Torillo,36,02/11/1986 00:00,Acatic,O-,39.8,Amoxicilina,07/01/2017 00:00,Parkinson,2e72715e-ec21-4236-92cb-14322719e542
+cc0c8a88-8d62-48c3-b996-39374596ae51,Leopoldo,Robledo,81,19/06/1941 00:00,Cocula,AB+,41.44,Ketamine,01/01/2022 00:00,VIH,0a3a97ae-46cd-4e61-89c5-69dc9eef808c
+647dd0fb-2327-4e76-a29b-9110efd3659f,Eduardo,Oliveros,58,25/03/1964 00:00,Tlaquepaque,B+,29.17,Fentanilo,20/10/2015 00:00,Epilepsia,9adaec3a-5ff0-48d1-ad8b-849fe2e1677d/4d83ac44-d450-4815-920a-e2e4778d9d29
+99b4b9b0-287e-4b43-9577-7b38933a2853,Hector,Jimenez,38,21/03/1984 00:00,San Martin de Bolanos,AB+,38.69,Gluten,20/10/2015 00:00,Artritis,c092cc18-248e-463a-a68e-ae39a62ca823
+1d471be4-fc50-4472-bd6e-8f366b1bb420,Hector,Mendez,21,29/07/2001 00:00,Acatic,A+,37.11,Polen,06/03/2012 00:00,Diabetes,f7ec9a7f-7b82-4d7a-986a-793a43926564/fb66dd23-1e9e-44e9-a2fc-2bbccdd6c6f4
+191eaffe-7e05-4f66-9916-faf3e0926cd0,Agustin,Canto,108,23/01/1914 00:00,Zapotlan el Grande,A+,15.36,Animales,27/05/2022 00:00,Diabetes,c4cc01f7-6a23-4c1e-bf58-cf45c8c35d59/f0cc3531-3655-42d1-8002-0657153d5dbe/adb6b25b-be5d-4cde-8b3c-68bc1c7ebbba/11635844-365e-42d2-83ba-4e1d806144ba/6974a6d3-f416-4402-9889-d5a1f2dd85d2
+22002b94-5ac2-4b29-ad9b-dd24cf8f1daa,Jorge,Magana,94,26/08/1928 00:00,Zapotlan el Grande,A-,36.71,Leche,12/09/2022 00:00,EPOC,97217eaf-568f-4e69-bce3-7203c589036a/aadc8403-34ea-496b-b443-85d60984265e/fcf439aa-c230-47b8-8b85-a067f725a996
+7f2bec53-2878-4ecc-b6cf-db2a163361d8,Barbara,Herrera,48,21/03/1974 00:00,San Martin de Bolanos,B+,32.61,Polen,26/11/2020 00:00,Hipertension,e3313270-bb9c-4af1-99d3-dacb0904e6e2/155ede64-dbd5-4159-bc75-47ed86233958/32234e87-19ad-4f5e-8c5e-f0e33e78b290
+26773384-4b48-4934-b551-d8b6da20c718,Jorge,Osnaya,104,29/08/1918 00:00,La Barca,AB+,40.83,Ibuprofeno,23/06/2016 00:00,Hipertension,83b14d83-6481-4d2b-89f5-8de8d68f5d9c/0f788913-504a-4fb9-a6a4-d4e60c5a7f03/83a2d1c6-9cf5-43cc-8758-411ce9abd7bb
+2525cde7-9109-4d90-9296-aea8ce8522ed,Viridiana,Lopez,61,30/06/1961 00:00,Arandas,O-,34.22,Leche,01/08/2016 00:00,Parkinson,c198ae8f-5995-4328-8b09-fcbf4ef57362/416ccc2c-4300-4060-bbb7-a9db886dae55/165c3d17-9408-4901-8d8f-c667eb658036
+ecb4f490-ed6f-4483-8357-73a1d33264d8,Viridiana,Jimenez,40,19/01/1982 00:00,Tecalitlan,B-,39.31,Fentanilo,24/10/2016 00:00,Diabetes,344712e5-4d1b-43e0-b875-2c8fef7d220c/11869fb1-6ad9-40d9-afd2-5ff0629b7351
+e001026a-3917-4483-9330-476ce5c55e7f,Alfonso,Lopez,95,22/06/1927 00:00,San Martin de Bolanos,AB+,39.78,Polen,24/04/2018 00:00,Insuficiencia Renal,36e2a5ca-06d1-42f3-9381-29338a659781/7dc134f1-cf28-41e5-a64c-e80d0d47beec
+f81f7789-138a-46ab-b267-71522a4afab5,Diana,Larios,76,04/01/1946 00:00,Ocotlan,B+,23.02,Ibuprofeno,18/05/2014 00:00,Epilepsia,0cd44b7d-4dea-4cb5-bf57-f870fc99df25
+a72f6c1b-fba6-4dd8-9385-dbb7137398c0,Oswaldo,Mendez,91,03/04/1931 00:00,Ocotlan,B+,21.48,Polvo,29/03/2014 00:00,EPOC,7623338a-5319-4313-a69e-ddb0f62c8afe/3db53b65-de3a-40f9-9638-43e00d6c4430/6ffedb95-d682-4c07-ad1f-51758b3abc52
+cd7fe3a0-81e8-48a9-8a9c-9045ad10e637,Leopoldo,Magana,48,19/04/1974 00:00,Bolanos,B+,27.82,Leche,20/08/2021 00:00,Cirrosis,8267c6f4-520e-4278-9d93-0855bf77eb89
+66251eec-ecaa-485b-b15d-3ae5ef689c61,Francisco,Chabaud,96,20/04/1926 00:00,Tenamaxtlan,AB-,32.1,Leche,27/08/2022 00:00,Hipotiroidismo,c02fac65-9485-4be9-8d56-dd1c523121c7
+1edf8795-f85e-4ecd-8386-49d41066f6e2,Maria,Robledo,91,05/11/1931 00:00,Acatic,AB-,26.29,Gluten,03/06/2022 00:00,Artritis,baae25e1-c023-4607-beb6-ea76fa7bc389
+745d8b6d-7fa8-4ad7-903b-bcc89eb34f13,Jose,Larios,74,30/12/1948 00:00,Tlaquepaque,O-,41.42,Ketamine,22/03/2015 00:00,Insuficiencia Renal,0209ad31-e02d-401a-9e36-1cf3dd8335d3
+51ed9775-0cd4-42be-a7eb-60ecd03252fc,Agustin,Chaparro,21,18/03/2001 00:00,Ocotlan,B-,35.6,Amoxicilina,02/11/2020 00:00,Cirrosis,78e93863-e122-4341-a3c4-87e5ea1b7476
+84866080-8e76-45d4-861f-f5bd312f4df6,Federico,Jimenez,91,24/04/1931 00:00,Ocotlan,B+,17.62,Ibuprofeno,12/12/2020 00:00,Epilepsia,da7d4540-41f3-430f-b57f-6c6106a78e69
+9f20beae-4566-4f87-841c-b8bb1f0441eb,Jorge,Garcia,89,09/09/1933 00:00,Etzatlan,B-,29.8,Ketamine,24/05/2017 00:00,Leucemia,15a722cc-cfb6-49eb-a0e8-1d06ab073474
+83b9f7d2-9d69-42ad-9472-1c7f61d24f4d,Agustin,Larios,27,05/05/1995 00:00,Arandas,B-,24.87,Leche,10/11/2020 00:00,Arritmia,e66459e9-35f3-4ea9-9a08-95a291d54f42
+219b04bd-b165-4100-9d52-2be981fc8e83,Maria,Magana,102,23/10/1920 00:00,La Barca,AB+,38.21,Ibuprofeno,22/01/2021 00:00,Insuficiencia Renal,eab3c20b-b17a-48c0-9d64-33a02bbd328b
+f0d373e4-09c9-4345-b0e2-2bdb39401160,Ana,Sanchez,21,23/12/2001 00:00,Zapopan,O+,44.4,Amoxicilina,02/01/2015 00:00,VIH,43332451-aef2-4199-a9d4-99330b4081b8/43920da7-985a-43bc-9986-351e504cc792
+baa42f3f-306b-45f4-9721-bec3b05921c0,Fabian,Canto,80,02/02/1942 00:00,Zapotlan el Grande,A+,41.85,Animales,06/04/2012 00:00,EPOC,bc47fcca-55d4-452b-bb7b-9e28ff3d5d3c/7753c969-f13a-4c1f-8e8e-ef0ac24b2310
+9a112430-b8af-4cd8-9f52-c6a7b1a4c92e,Mario,Chabaud,95,15/05/1927 00:00,Zapotlan el Grande,O+,17.22,N/A,08/01/2021 00:00,Alzheimer,c10c0b63-6c29-41f6-946f-0acccb65a143/f50b4d0e-f13f-47e3-8e05-a634fe7c3775
+ca3202e2-1ecf-4bb2-95f0-cd6d5ba000c7,Diana,Magana,24,09/11/1998 00:00,Bolanos,O-,36.83,Animales,31/12/2012 00:00,Arritmia,cd4abdd9-eaf1-4d90-9e07-3b7ea52e3cad/3707443a-7ada-4a24-b673-c3d555bc0f3d
+80b40677-40a0-4159-b370-fdaa6dc8a70f,Diana,Robledo,33,09/11/1989 00:00,Villa Corona,B+,35.58,N/A,26/08/2019 00:00,Hipertension,064dfa79-bbee-42de-b485-ae93eda34a6c
+644cc482-b299-4574-8429-c227bdf450dd,Fabian,Chaparro,93,23/07/1929 00:00,Tala,AB+,19.13,Mariscos,21/01/2020 00:00,Esclerosis,5636fc9d-24fa-4520-bde3-ab7105624aed/16c6f94c-6c64-46bb-a4af-42535fa24035
+24b76d4f-a9d2-4c97-af93-8938e21505b8,Carmen,Merino,61,26/06/1961 00:00,Tecalitlan,O-,19.35,Gluten,12/05/2021 00:00,Asma,909eacb8-1102-4e99-9e4a-f2e07e31de7c/a0f22ee8-09ed-47ad-9967-7d0416d0d4a9
+703788a2-4deb-4a74-a10c-920806194a5a,Jose,Huerta,99,31/08/1923 00:00,Cocula,A+,26.34,Amoxicilina,28/04/2021 00:00,Hipertension,2b84f168-b1fe-43c8-973f-65d50a5107fe
+23c540cf-ed5a-40af-b5b5-5d8284570b14,Carlos,Sanchez,41,21/12/1981 00:00,Tlaquepaque,B-,32.74,Mariscos,26/09/2020 00:00,VIH,423c88c3-745e-453f-b809-8199eea512a6
+760bd274-8369-4ec2-a5d5-cd2bd998396e,Juanita,Lopez,104,17/11/1918 00:00,Bolanos,B-,28.35,Cacahuates,26/08/2019 00:00,Alzheimer,d542128d-3ece-4855-a567-26d537f54747
+62cd02ea-343a-415b-a389-3c5f02ec88f0,Jorge,Jimenez,88,11/01/1934 00:00,Villa Corona,B-,38.93,Ketorolaco,05/04/2018 00:00,Arritmia,dfd3221a-ea7e-4f49-a3b6-b161ce4e124b
+9746d32a-5af8-47b2-9a4d-c0b97b2d6eb7,Eduardo,Canto,36,25/12/1986 00:00,Villa Corona,O-,29.45,Polen,11/10/2020 00:00,Leucemia,6562c5d2-0927-4a2b-bf82-2e10f11cc847
