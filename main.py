@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import os
 
-from fastapi import FastAPI ### 
+from fastapi import FastAPI
 from pymongo import MongoClient
-from routes import router as router
 
-MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://angeles:angeles@national-medical-record.34mgqxn.mongodb.net/test')
+from routes.patient import router as patient_router
+from routes.prescription import router as prescription_router
+
+MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://test:test@national-medical-record.34mgqxn.mongodb.net/test')
 DB_NAME = os.getenv('MONGODB_DB_NAME', 'HMN')  # Historial médico nacional
 
 app = FastAPI()
@@ -24,4 +26,5 @@ def shutdown_db_client():
     print(f"Connection to MongoDB at: {MONGODB_URI} is now closed")
 
 
-app.include_router(router, tags=["prescriptions"], prefix="/presc")
+app.include_router(patient_router, tags=["patient"], prefix="/patient")
+app.include_router(prescription_router, tags=["prescription"], prefix="/prescription")

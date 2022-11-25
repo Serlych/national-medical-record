@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-import uuid
 from typing import Optional
+
 from pydantic import BaseModel, Field
 
+
 class Patient(BaseModel):
-    #id: str = Field(alias="_id")
     NSS: str = Field(...)
     Nombre: str = Field(...)
-    Apellidos: str = Field (...)
+    Apellidos: str = Field(...)
     Edad: int = Field(...)
     Fecha_de_Nacimiento: str = Field(...)
     Ciudad_de_Nacimiento: str = Field(...)
@@ -19,7 +19,7 @@ class Patient(BaseModel):
     Historial_de_Consultas: list = Field(...)
 
     class Config:
-        allow_population_by_field_name = True ##
+        allow_population_by_field_name = True
         schema_extra = {
             "example": {
                 "NSS": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
@@ -30,10 +30,10 @@ class Patient(BaseModel):
                 "Ciudad_de_Nacimiento": "Guadalajara",
                 "Tipo_de_Sangre": "A+",
                 "IMC": 41.42,
-                "Alergias": [ "Gluten" ],
+                "Alergias": ["Gluten"],
                 "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": [ "4ab7a800b1eddedbd9fcc513"  ]
+                "Historial_de_Consultas": ["4ab7a800b1eddedbd9fcc513"]
             }
         }
 
@@ -49,7 +49,7 @@ class PatientUpdate(BaseModel):
     IMC: Optional[float]
     Alergias: Optional[list]
     Ultima_Consulta: Optional[str]
-    Padecimientos:  Optional[str]
+    Padecimientos: Optional[str]
     Historial_de_Consultas: Optional[list]
 
     class Config:
@@ -63,9 +63,9 @@ class PatientUpdate(BaseModel):
                 "Ciudad_de_Nacimiento": "Guadalajara",
                 "Tipo_de_Sangre": "A+",
                 "IMC": 41.42,
-                "Alergias": [ "Gluten" ],
+                "Alergias": ["Gluten"],
                 "Ultima Consulta": "29/09/2013 00:00",
                 "Padecimientos": "Cirrosis",
-                "Historial_de_Consultas": [ "4ab7a800b1eddedbd9fcc513"  ]
+                "Historial_de_Consultas": ["4ab7a800b1eddedbd9fcc513"]
             }
         }

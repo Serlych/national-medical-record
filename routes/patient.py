@@ -1,22 +1,24 @@
 #!/usr/bin/env python3
-from fastapi import APIRouter, Body, Request, Response, HTTPException, status
+from fastapi import APIRouter, Body, Request, status
 from fastapi.encoders import jsonable_encoder
-from typing import List
 
-from prescription_model import Prescription, PrescriptionUpdate
+from models.patient import Patient
 
 router = APIRouter()
+coll = "patient"
 
-@router.post("/", response_description="Post the info of a new medication", status_code=status.HTTP_201_CREATED, response_model=Prescription)
-def create_prescription(request: Request, prescription: Prescription = Body(...)):
-    #prescription = jsonable_encoder(prescription)
-    print (prescription)
-    # new_prescription = request.app.database["prescriptions"].insert_one(prescription)
-    # created_prescription = request.app.database["prescriptions"].find_one(
-    #     {"_id": new_prescription.inserted_id}
-    # )
+@router.get("/{id}", response_description="Get a single patient's history", status_code=status.HTTP_200_OK, response_model=Patient)
+def find_patient(request: Request, NSS: str):
+    if patient := request.app.database[coll].find_one({"NSS": NSS}) is not None:
+        return patient
 
-    # return created_prescription
+
+@router.post("/", response_description="Post the info of a new patient", status_code=status.HTTP_201_CREATED, response_model=Patient)
+def create_patient(request: Request, patient: Patient = Body(...)):
+    patient = jsonable_encoder(patient)
+    new_patient = request.app.database[coll].insert_one(patient)
+
+    return new_patient
 
 
 # @router.get("/", response_description="Get all books", response_model=List[Book])
