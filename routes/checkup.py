@@ -9,6 +9,6 @@ coll = "checkup"
 
 
 @router.post("/", response_description="Create a new checkup", status_code=status.HTTP_201_CREATED,
-             response_model=Checkup)
+             response_model=bool)
 def create_patient(request: Request, checkup: Checkup = Body(...)):
     return insert_one(request, checkup, coll)

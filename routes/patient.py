@@ -15,7 +15,7 @@ def find_patient(request: Request, NSS: str):
 
 
 @router.post("/", response_description="Create a new patient", status_code=status.HTTP_201_CREATED,
-             response_model=Patient)
+             response_model=bool)
 def create_patient(request: Request, patient: Patient = Body(...)):
     return insert_one(request, patient, coll)
 

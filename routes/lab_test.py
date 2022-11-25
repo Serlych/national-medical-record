@@ -9,6 +9,6 @@ coll = "lab_test"
 
 
 @router.post("/", response_description="Create a new lab test", status_code=status.HTTP_201_CREATED,
-             response_model=LabTest)
+             response_model=bool)
 def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
     return insert_one(request, lab_test, coll)

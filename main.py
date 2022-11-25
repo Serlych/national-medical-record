@@ -14,8 +14,8 @@ from routes.checkup import coll as checkup_endpoint
 from routes.prescription import coll as prescription_endpoint
 from routes.lab_test import coll as lab_test_endpoint
 
-MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://test:test@national-medical-record.34mgqxn.mongodb.net/test')
-DB_NAME = os.getenv('MONGODB_DB_NAME', 'HMN')  # Historial médico nacional
+DB_NAME = os.getenv('MONGODB_DB_NAME', 'national-medical-record')
+MONGODB_URI = os.getenv('MONGODB_URI', f'mongodb+srv://admin:admin@{DB_NAME}.34mgqxn.mongodb.net/test')
 
 app = FastAPI()
 

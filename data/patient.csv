@@ -1,4 +1,4 @@
-nss,nombre,apellidos,edad,fecha_de_nacimiento,ciudad_de_nacimiento,tipo_de_sangre,imc,alergias,ultima_consulta,padecimientos,historial_de_consulta
+nss,nombre,apellidos,edad,fecha_de_nacimiento,ciudad_de_nacimiento,tipo_de_sangre,imc,alergias,ultima_consulta,padecimientos,consultas
 4e1b0ee8-fa7f-454e-8ec1-660d83a404fa,Barbara,Canto,30,28/07/1992 00:00,Guadalajara,B-,41.42,Ketamine,27/03/2022 00:00,Hipotiroidismo,32168bde-35e9-4b3e-ad4b-d09091c4bd88/5700e430-7c7b-452c-b4f2-684d2717f499
 68c9eb13-a596-43ec-a5d4-984fe0a42f9e,Hector,Merino,53,09/05/1969 00:00,Tecalitlan,B+,18.88,Ketorolaco,11/07/2015 00:00,Leucemia,cb67455d-6cb9-4d96-807c-75809c476b5d/56e4c2f9-4d84-48d4-a8a1-f20aacfa6681
 02e72991-f230-4398-b3d4-2e0bee0b2b37,Alfonso,Huerta,25,11/12/1997 00:00,Ocotlan,A-,17.03,N/A,07/05/2018 00:00,Cirrosis,2857cefd-164b-448c-b679-ca38f4e8a310/70d9297a-99c1-4c6e-81d4-841e3df599f7
