@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from fastapi import APIRouter, Body, Request, status
-from lib.mongo import find_one, insert_one
+from lib.mongo import find_one, insert_one, update_one
 
 from models.patient import Patient, PatientUpdate
 
@@ -18,6 +18,14 @@ def find_patient(request: Request, NSS: str):
              response_model=bool)
 def create_patient(request: Request, patient: Patient = Body(...)):
     return insert_one(request, patient, coll)
+
+@router.post("/")
+def associate_checkup_with_patient(request, patient: Patient):
+    find_criteria = {"nss": patient.nss}
+    checkup = find_one(request, find_criteria, 'checkup')
+    patient = find_one(request, find_criteria, coll)
+    return update_one(request, find_criteria, {"$push": {"consultas": checkup._id}}, coll)
+
 
 # @router.get("/", response_description="Get all books", response_model=List[Book])
 # def list_books(request: Request, rating: float = 0, title: str = "", limit: int = 5, skip: int = 0, pages: int = 0):
