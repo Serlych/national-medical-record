@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from fastapi import APIRouter, Body, Request, status
 from lib.mongo import insert_one, find_one, update_one, find_many
-from typing import List
+from typing import List, Tuple
 
 from models.checkup import Checkup
 
@@ -9,8 +9,10 @@ router = APIRouter()
 coll = "checkup"
 
 
+#
 @router.get("/{nss}", response_description="Get all checkups for a patient", status_code=status.HTTP_200_OK,
-            response_model=List[Checkup])
+            response_model=Tuple[List[Checkup], List[str]])
+# response_model=List[Checkup])
 def find_checkup(request: Request, nss: str):
     find_criteria = {"nss": nss}
     return find_many(request, find_criteria, coll)

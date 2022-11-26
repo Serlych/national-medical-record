@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from fastapi import APIRouter, Body, Request, status
-from lib.mongo import find_one, insert_one, update_one
 
-from models.patient import Patient, PatientUpdate
+from lib.mongo import find_one, insert_one, update_one
+from models.patient import Patient
 
 router = APIRouter()
 coll = "patient"
@@ -20,13 +20,17 @@ def find_patient(request: Request, nss: str):
 def create_patient(request: Request, patient: Patient = Body(...)):
     return insert_one(request, patient, coll)
 
-@router.post("/associate_checkups", response_description="Linking patient with checkups", status_code=status.HTTP_200_OK, 
+
+@router.post("/associate_checkup",
+             response_description="Adds a single checkup to the list of a patient's checkups",
+             status_code=status.HTTP_201_CREATED,
              response_model=Patient)
-def associate_checkup_with_patient(request, patient: Patient):
-    find_criteria = {"nss": patient.nss}
-    checkup = find_one(request, find_criteria, 'checkup')
-    update_one(request, find_criteria, {"$push": {"consultas": checkup._id}}, coll)
-    
+def associate_checkup_with_patient(request: Request, data=Body(...)):
+    find_criteria = {"nss": data['nss']}
+    update_one(request, find_criteria, {
+        "$push": {
+            "consultas": data['object_id']
+        }
+    }, coll)
+
     return find_one(request, find_criteria, coll)
-
-

@@ -3,6 +3,8 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
+from pymongo.typings import RawBSONDocument
+
 
 class LabTest(BaseModel):
     nss: str = Field(...)
