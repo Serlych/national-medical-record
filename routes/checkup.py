@@ -24,10 +24,9 @@ def create_checkup(request: Request, checkup: Checkup = Body(...)):
     return insert_one(request, checkup, coll)
 
 
-@router.post("/associate_prescription", response_description="Linking prescription with checkup",
-             status_code=status.HTTP_200_OK,
+@router.post("/associate_prescription", response_description="Linking prescription with checkup", status_code=status.HTTP_200_OK,
              response_model=Checkup)
-def associate_prescription_with_checkup(request, checkup: Checkup):
+def associate_prescription_with_checkup(request:Request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
     prescription = find_one(request, find_criteria, 'prescription')
     update_one(request, find_criteria, {"$push": {"recetas": prescription._id}}, coll)
@@ -35,10 +34,9 @@ def associate_prescription_with_checkup(request, checkup: Checkup):
     return find_one(request, find_criteria, coll)
 
 
-@router.post("/associate_lab_test", response_description="Linking lab tests with checkup",
-             status_code=status.HTTP_200_OK,
+@router.post("/associate_lab_test", response_description="Linking lab tests with checkup", status_code=status.HTTP_200_OK,
              response_model=Checkup)
-def associate_lab_test_with_checkup(request, checkup: Checkup):
+def associate_lab_test_with_checkup(request:Request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
     lab_test = find_one(request, find_criteria, 'lab_test')
     update_one(request, find_criteria, {"$push": {"pruebas_de_laboratorio": lab_test._id}}, coll)

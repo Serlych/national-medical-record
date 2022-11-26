@@ -21,10 +21,8 @@ def create_patient(request: Request, patient: Patient = Body(...)):
     return insert_one(request, patient, coll)
 
 
-@router.post("/associate_checkup",
-             response_description="Adds a single checkup to the list of a patient's checkups",
-             status_code=status.HTTP_201_CREATED,
-             response_model=Patient)
+@router.post("/associate_checkup", response_description="Adds a single checkup to the list of a patient's checkups",
+             status_code=status.HTTP_201_CREATED, response_model=Patient)
 def associate_checkup_with_patient(request: Request, data=Body(...)):
     find_criteria = {"nss": data['nss']}
     update_one(request, find_criteria, {

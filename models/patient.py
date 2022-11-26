@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class Patient(BaseModel):
+    _id: str = Field(...)
     nss: str = Field(...)
     nombre: str = Field(...)
     apellidos: str = Field(...)
@@ -22,6 +23,7 @@ class Patient(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
+                "_id": "ObjectId('638154aad891dfc909b0b17b')",
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "nombre": "Hector",
                 "apellidos": "Merino",

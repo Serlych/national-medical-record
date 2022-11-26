@@ -23,7 +23,7 @@ def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
 
 @router.post("/associate_checkup", response_description="Linking checkup with lab tests", status_code=status.HTTP_200_OK, 
              response_model=LabTest)
-def associate_checkup_with_lab_test(request, lab_test: LabTest):
+def associate_checkup_with_lab_test(request:Request, lab_test: LabTest):
     find_criteria = {"nss": lab_test.nss}
     checkup = find_one(request, find_criteria, 'checkup')
     update_one(request, find_criteria, {"$set": {"consulta": checkup._id}}, coll)

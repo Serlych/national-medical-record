@@ -7,6 +7,7 @@ from pymongo.typings import RawBSONDocument
 
 
 class LabTest(BaseModel):
+    _id: str = Field(...)
     nss: str = Field(...)
     consulta: str = Field(...)
     pruebas: list = Field(...)
@@ -15,6 +16,7 @@ class LabTest(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
+                "_id": "ObjectId('638154aad891dfc909b0b17b')",
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "consulta": "objectId",
                 "pruebas": [{
