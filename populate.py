@@ -14,13 +14,13 @@ def post(endpoint, data):
     response = requests.post(BASE_URL + f"/{endpoint}", json=data)
 
     if not response.ok:
-        print(f"Failed to post {endpoint} {response} - {data}")
+        print(f"Failed to post {endpoint} {response.text} - {data}")
     else:
-        print(response.text)
+        print(f"Posted {endpoint} succesfully for NSS: {data['nss']}")
 
 
 def main():
-    # Colección de pacientes
+    # # Colección de pacientes
     # with open(f"data/{patient_endpoint}.csv") as fd:
     #     patients_csv = csv.DictReader(fd)
     #
@@ -41,8 +41,8 @@ def main():
     #         }
     #
     #         post(patient_endpoint, patient)
-
-    # Colección de consultas
+    #
+    # # Colección de consultas
     # with open(f"data/{checkup_endpoint}.csv") as fd:
     #     checkups_csv = csv.DictReader(fd)
     #
@@ -67,18 +67,18 @@ def main():
             prescription = {
                 "nss": row["nss"],
                 "consulta": "any",
-                "medicamentos": {
+                "medicamentos": [{
                     "nombre": row["nombre"],
                     "dosis": float(row["dosis"]),
                     "gramaje": int(row["gramaje"]),
                     "frecuencia": int(row["frecuencia"]),
                     "duracion": int(row["duracion"])
-                }
+                }]
             }
 
             post(prescription_endpoint, prescription)
 
-    # Colección de pruebas clínicas
+    # # Colección de pruebas clínicas
     # with open(f"data/{lab_test_endpoint}.csv") as fd:
     #     lab_tests_csv = csv.DictReader(fd)
     #
