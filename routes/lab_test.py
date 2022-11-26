@@ -20,9 +20,9 @@ def find_lab_test(request: Request, nss: str):
 def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
     return insert_one(request, lab_test, coll)
 
+
 @router.post("/")
-def associate_checkup_with_labTest(request, lab_test: LabTest):
+def associate_checkup_with_lab_test(request, lab_test: LabTest):
     find_criteria = {"nss": lab_test.nss}
     checkup = find_one(request, find_criteria, 'checkup')
-    lab_test = find_one(request, find_criteria, coll)
     return update_one(request, find_criteria, {"$push": {"consulta": checkup._id}}, coll)

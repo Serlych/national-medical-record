@@ -20,16 +20,19 @@ def find_checkup(request: Request, nss: str):
 def create_checkup(request: Request, checkup: Checkup = Body(...)):
     return insert_one(request, checkup, coll)
 
-@router.post("/")
+
+@router.post("/associate_prescription")
 def associate_prescription_with_checkup(request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
-    checkup = find_one(request, find_criteria, coll)
     prescription = find_one(request, find_criteria, 'prescription')
     return update_one(request, find_criteria, {"$push": {"recetas": prescription._id}}, coll)
 
-@router.post("/")
-def associate_labTests_with_checkup(request, checkup: Checkup):
+
+@router.post("/associate_lab_test", response_description="Asocaidslkfjalk ", status_code=status.HTTP_200_OK,
+             response_model=Checkup)
+def associate_lab_test_with_checkup(request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
-    checkup = find_one(request, find_criteria, coll)
-    labTests = find_one(request, find_criteria, 'lab_test')
-    return update_one(request, find_criteria, {"$push": {"pruebas_de_laboratorio": labTests._id}}, coll)
+    lab_test = find_one(request, find_criteria, 'lab_test')
+    update_one(request, find_criteria, {"$push": {"pruebas_de_laboratorio": lab_test._id}}, coll)
+
+    return find_one(request, find_criteria, coll)
