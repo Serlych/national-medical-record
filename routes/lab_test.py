@@ -17,7 +17,8 @@ def find_lab_test(request: Request, NSS: str):
 def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
     return insert_one(request, lab_test, coll)
 
-@router.post("/")
+@router.post("/", response_description="Linking checkup with lab tests", status_code=status.HTTP_200_OK, 
+             response_model=bool)
 def associate_checkup_with_labTest(request, lab_test: LabTest):
     find_criteria = {"nss": lab_test.nss}
     checkup = find_one(request, find_criteria, 'checkup')

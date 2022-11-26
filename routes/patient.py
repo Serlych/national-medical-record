@@ -19,7 +19,8 @@ def find_patient(request: Request, NSS: str):
 def create_patient(request: Request, patient: Patient = Body(...)):
     return insert_one(request, patient, coll)
 
-@router.post("/")
+@router.post("/", response_description="Linking patiente with checkups", status_code=status.HTTP_200_OK, 
+             response_model=bool)
 def associate_checkup_with_patient(request, patient: Patient):
     find_criteria = {"nss": patient.nss}
     checkup = find_one(request, find_criteria, 'checkup')

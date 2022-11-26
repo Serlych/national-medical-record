@@ -17,7 +17,8 @@ def find_prescription(request: Request, NSS: str):
 def create_prescription(request: Request, prescription: Prescription = Body(...)):
     return insert_one(request, prescription, coll)
 
-@router.post("/")
+@router.post("/", response_description="Linking checkup with prescription", status_code=status.HTTP_200_OK, 
+             response_model=bool)
 def associate_checkup_with_prescription(request, prescription: Prescription):
     find_criteria = {"nss": prescription.nss}
     checkup = find_one(request, find_criteria, 'checkup')

@@ -17,14 +17,16 @@ def find_checkup(request: Request, NSS: str):
 def create_checkup(request: Request, checkup: Checkup = Body(...)):
     return insert_one(request, checkup, coll)
 
-@router.post("/")
+@router.post("/", response_description="Linking prescription with checkup", status_code=status.HTTP_200_OK, 
+             response_model=bool)
 def associate_prescription_with_checkup(request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
     checkup = find_one(request, find_criteria, coll)
     prescription = find_one(request, find_criteria, 'prescription')
     return update_one(request, find_criteria, {"$push": {"recetas": prescription._id}}, coll)
 
-@router.post("/")
+@router.post("/", response_description="Linking lab tests with checkup", status_code=status.HTTP_200_OK, 
+             response_model=bool)
 def associate_labTests_with_checkup(request, checkup: Checkup):
     find_criteria = {"nss": checkup.nss}
     checkup = find_one(request, find_criteria, coll)
