@@ -2,6 +2,8 @@ from fastapi import Request
 from fastapi.encoders import jsonable_encoder
 from pymongo.results import InsertOneResult, UpdateResult
 from pymongo.typings import _DocumentType
+from typing import List
+
 from typing import Optional
 
 
@@ -12,6 +14,10 @@ def insert_one(request: Request, data, collection: str) -> InsertOneResult:
 
 def find_one(request: Request, criteria: dict, collection: str) -> Optional[_DocumentType]:
     return request.app.database[collection].find_one(criteria)
+
+
+def find_many(request: Request, criteria: dict, collection: str) -> List[_DocumentType]:
+    return list(request.app.database[collection].find(criteria))
 
 
 def update_one(request: Request, find_criteria: dict, update_criteria: dict, collection: str) -> UpdateResult:
