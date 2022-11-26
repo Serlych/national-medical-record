@@ -28,3 +28,12 @@ def create_prescription(request: Request, prescription: Prescription = Body(...)
 
     insert_one(request, prescription, coll)
     return find_one(request, find_criteria, coll)
+
+
+@router.post("/")
+def associate_checkup_with_prescription(request, prescription: Prescription):
+    find_criteria = {"nss": prescription.nss}
+    checkup = find_one(request, find_criteria, 'checkup')
+    update_one(request, find_criteria, {"$set": {"consulta": checkup._id}}, coll)
+
+    return find_one(request, find_criteria, coll)

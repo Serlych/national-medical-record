@@ -25,4 +25,4 @@ def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
 def associate_checkup_with_lab_test(request, lab_test: LabTest):
     find_criteria = {"nss": lab_test.nss}
     checkup = find_one(request, find_criteria, 'checkup')
-    return update_one(request, find_criteria, {"$push": {"consulta": checkup._id}}, coll)
+    return update_one(request, find_criteria, {"$set": {"consulta": checkup._id}}, coll)
