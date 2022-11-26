@@ -20,15 +20,12 @@ def find_lab_test(request: Request, nss: str):
 def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
     return insert_one(request, lab_test, coll)
 
-<<<<<<< HEAD
-@router.post("/", response_description="Linking checkup with lab tests", status_code=status.HTTP_200_OK, 
-             response_model=bool)
-def associate_checkup_with_labTest(request, lab_test: LabTest):
-=======
 
-@router.post("/")
+@router.post("/associate_checkup", response_description="Linking checkup with lab tests", status_code=status.HTTP_200_OK, 
+             response_model=LabTest)
 def associate_checkup_with_lab_test(request, lab_test: LabTest):
->>>>>>> 9fa8bc20ddbd1e18c92e851ae8c4e22c68590852
     find_criteria = {"nss": lab_test.nss}
     checkup = find_one(request, find_criteria, 'checkup')
-    return update_one(request, find_criteria, {"$set": {"consulta": checkup._id}}, coll)
+    update_one(request, find_criteria, {"$set": {"consulta": checkup._id}}, coll)
+    
+    return find_one(request, find_criteria, coll) 

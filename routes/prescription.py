@@ -30,8 +30,8 @@ def create_prescription(request: Request, prescription: Prescription = Body(...)
     return find_one(request, find_criteria, coll)
 
 
-@router.post("/", response_description="Linking checkup with prescription", status_code=status.HTTP_200_OK, 
-             response_model=bool)
+@router.post("/associate_checkup", response_description="Linking checkup with prescription", status_code=status.HTTP_200_OK, 
+             response_model=Prescription)
 def associate_checkup_with_prescription(request, prescription: Prescription):
     find_criteria = {"nss": prescription.nss}
     checkup = find_one(request, find_criteria, 'checkup')
