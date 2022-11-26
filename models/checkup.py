@@ -17,14 +17,14 @@ class Checkup(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "_id": "ObjectId('638154aad891dfc909b0b17b')",
+                "_id": "507f1f77bcf86cd799439011",
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "fecha": "27/05/2022 00:00",
                 "medico_tratante": "Dr. Carmen Robledo",
                 "cedula_profesional": "57918810",
                 "diagnostico": "Gastritis",
-                "recetas": ["objectId"],
-                "pruebas_de_laboratorio": ["objectId"]
+                "recetas": ["507f1f77bcf86cd799439011"],
+                "pruebas_de_laboratorio": ["507f1f77bcf86cd799439011"]
             }
         }
 
@@ -46,7 +46,7 @@ class CheckupUpdate(BaseModel):
                 "medico_tratante": "Dr. Carmen Robledo",
                 "cedula_profesional": "57918810",
                 "diagnostico": "Gastritis",
-                "recetas": ["objectId"],
-                "pruebas_de_laboratorio": ["objectId"]
+                "recetas": ["507f1f77bcf86cd799439011"],
+                "pruebas_de_laboratorio": ["507f1f77bcf86cd799439011"]
             }
         }

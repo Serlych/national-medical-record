@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from typing import Optional
-
 from pydantic import BaseModel, Field
 
 
@@ -23,7 +22,7 @@ class Patient(BaseModel):
         allow_population_by_field_name = True
         schema_extra = {
             "example": {
-                "_id": "ObjectId('638154aad891dfc909b0b17b')",
+                "_id": "507f1f77bcf86cd799439011",
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
                 "nombre": "Hector",
                 "apellidos": "Merino",
@@ -35,7 +34,7 @@ class Patient(BaseModel):
                 "alergias": ["Gluten"],
                 "ultima_consulta": "29/09/2013 00:00",
                 "padecimientos": ["Cirrosis"],
-                "consultas": ["objectId"]
+                "consultas": ["507f1f77bcf86cd799439011"]
             }
         }
 
@@ -68,6 +67,6 @@ class PatientUpdate(BaseModel):
                 "alergias": ["Gluten"],
                 "ultima_consulta": "29/09/2013 00:00",
                 "padecimientos": ["Cirrosis"],
-                "consultas": ["objectId"]
+                "consultas": ["507f1f77bcf86cd799439011"]
             }
         }

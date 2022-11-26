@@ -28,5 +28,5 @@ def update_one(request: Request, find_criteria: dict, update_criteria: dict, col
     return request.app.database[collection].update_one(find_criteria, update_criteria)
 
 
-def aggregate(request: Request, agg, collection):
-    return request.app.database[collection].aggregate()
+def aggregate(request: Request, aggregate_criteria: List[dict], collection: str):
+    return request.app.database[collection].aggregate(aggregate_criteria)
