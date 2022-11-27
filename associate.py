@@ -2,12 +2,12 @@
 import csv
 import json
 
-from lib.http import get, post
-
 from routes.checkup import coll as checkup_endpoint
 from routes.patient import coll as patient_endpoint
 from routes.prescription import coll as prescription_endpoint
 from routes.lab_test import coll as lab_test_endpoint
+
+from lib.http import get, post
 
 
 def main():

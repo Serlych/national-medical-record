@@ -53,6 +53,15 @@ def main():
     with open(f"data/{prescription_endpoint}.csv") as fd:
         prescriptions_csv = csv.DictReader(fd)
 
+        # find_criteria = {"nss": prescription.nss}
+        # update_criteria = {"$push": {"medicamentos": prescription.medicamentos[0]}}
+        #
+        # if (existing_prescription := find_one(request, find_criteria, coll)) is not None:
+        #     update_one(request, find_criteria, update_criteria, coll)
+        #     return existing_prescription
+        #
+        # insert_one(request, prescription, coll)
+        # return find_one(request, find_criteria, coll)
         for row in prescriptions_csv:
             prescription = {
                 "nss": row["nss"],

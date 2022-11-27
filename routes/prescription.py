@@ -21,15 +21,8 @@ def find_precriptions(request: Request, nss: str):
 @router.post("/", response_description="Create a new prescription", status_code=status.HTTP_201_CREATED,
              response_model=Union[Prescription, None])
 def create_prescription(request: Request, prescription: Prescription = Body(...)):
-    find_criteria = {"nss": prescription.nss}
-    update_criteria = {"$push": {"medicamentos": prescription.medicamentos[0]}}
-
-    if (existing_prescription := find_one(request, find_criteria, coll)) is not None:
-        update_one(request, find_criteria, update_criteria, coll)
-        return existing_prescription
-
-    insert_one(request, prescription, coll)
-    return find_one(request, find_criteria, coll)
+    inserted = insert_one(request, prescription, coll)
+    return find_one(request, {'_id': inserted.inserted_id}, coll)
 
 
 @router.post("/associate_checkup",

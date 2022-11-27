@@ -13,7 +13,6 @@ coll = "checkup"
 
 @router.get("/{nss}", response_description="Get all checkups for a patient", status_code=status.HTTP_200_OK,
             response_model=Tuple[List[Checkup], List[str]])
-# response_model=List[Checkup])
 def find_checkups(request: Request, nss: str):
     find_criteria = {"nss": nss}
     return find_many(request, find_criteria, coll)
@@ -22,7 +21,8 @@ def find_checkups(request: Request, nss: str):
 @router.post("/", response_description="Create a new checkup", status_code=status.HTTP_201_CREATED,
              response_model=Checkup)
 def create_checkup(request: Request, checkup: Checkup = Body(...)):
-    return insert_one(request, checkup, coll)
+    inserted = insert_one(request, checkup, coll)
+    return find_one(request, {'_id': inserted.inserted_id}, coll)
 
 
 @router.post("/associate_prescription",

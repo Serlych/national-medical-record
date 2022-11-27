@@ -21,7 +21,8 @@ def find_lab_tests(request: Request, nss: str):
 @router.post("/", response_description="Create a new lab test", status_code=status.HTTP_201_CREATED,
              response_model=LabTest)
 def create_lab_test(request: Request, lab_test: LabTest = Body(...)):
-    return insert_one(request, lab_test, coll)
+    inserted = insert_one(request, lab_test, coll)
+    return find_one(request, {'_id': inserted.inserted_id}, coll)
 
 
 @router.post("/associate_checkup",
