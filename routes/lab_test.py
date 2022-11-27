@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from fastapi import APIRouter, Body, Request, status
 from bson.objectid import ObjectId
-from typing import List, Tuple, Union
+from typing import List
 
 from lib.mongo import insert_one, find_one, find_many, update_one
 
