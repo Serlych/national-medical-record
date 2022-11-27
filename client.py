@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import argparse
-import logging
 
 from routes.patient import coll as patient_endpoint
 from routes.checkup import coll as checkup_endpoint
@@ -13,13 +12,6 @@ from models.prescription import Prescription
 from models.lab_test import LabTest
 
 from lib.api import api_factory
-
-# Set logger
-log = logging.getLogger()
-log.setLevel('INFO')
-handler = logging.FileHandler('nmr.log')
-handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
-log.addHandler(handler)
 
 
 def patient_api(nss: str, action: str):
@@ -58,7 +50,7 @@ prueba = "prueba"
 
 
 def main():
-    log.info(f"===== Historial Médico Nacional =====")
+    print(f"===== Historial Médico Nacional =====")
 
     parser = argparse.ArgumentParser()
 
@@ -89,10 +81,10 @@ def main():
             print('Para buscar, es necesario introducir un NSS')
             return
 
-    if args.action == "crear":
+    elif args.action == "crear":
         action = 'post'
 
-    if args.action == "actualizar":
+    elif args.action == "actualizar":
         action = 'patch'
 
         if args.entity != paciente:
