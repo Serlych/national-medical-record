@@ -13,6 +13,6 @@ def post(endpoint, data, args=''):
     response = requests.post(BASE_URL + f"/{endpoint}/{args}", json=data)
 
     if not response.ok:
-        print(f"Failed to post {endpoint} - {response.text} - {data['nss']}")
+        print(f"Failed to post on {endpoint}: {response.text}.")
     else:
-        print(f"Posted {endpoint} succesfully for NSS: {data['nss']}")
+        print(f"Posted on {endpoint} succesfully.")

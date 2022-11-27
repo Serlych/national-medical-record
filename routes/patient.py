@@ -2,8 +2,8 @@
 from fastapi import APIRouter, Body, Request, status
 
 from lib.mongo import find_one, insert_one, update_one
+
 from models.patient import Patient
-from bson.objectid import ObjectId
 
 router = APIRouter()
 coll = "patient"
@@ -26,13 +26,10 @@ def create_patient(request: Request, patient: Patient = Body(...)):
 @router.post("/associate_checkup", response_description="Adds a single checkup to the list of a patient's checkups",
              status_code=status.HTTP_201_CREATED, response_model=Patient)
 def associate_checkup_with_patient(request: Request, data=Body(...)):
-    checkup_find_criteria = {"_id": ObjectId(data['object_id'])}
     patient_find_criteria = {"nss": data['nss']}
-
-    checkup = find_one(request, checkup_find_criteria, 'checkup')
     update_one(request, patient_find_criteria, {
         "$push": {
-            "consultas": str(checkup['_id'])
+            "consultas": data['checkup_id']
         }
     }, coll)
 
