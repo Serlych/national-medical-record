@@ -21,6 +21,7 @@ def find_checkups(request: Request, nss: str):
 @router.post("/", response_description="Create a new checkup", status_code=status.HTTP_201_CREATED,
              response_model=Checkup)
 def create_checkup(request: Request, checkup: Checkup = Body(...)):
+    print(checkup)
     inserted = insert_one(request, checkup, coll)
     return find_one(request, {'_id': inserted.inserted_id}, coll)
 

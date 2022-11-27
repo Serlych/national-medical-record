@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 import argparse
 import logging
-import os
 
-import requests
+from routes.patient import coll as patient_endpoint
+from routes.checkup import coll as checkup_endpoint
+from routes.prescription import coll as prescription_endpoint
+from routes.lab_test import coll as lab_test_endpoint
+
+from models.patient import Patient
+from models.checkup import Checkup
+from models.prescription import Prescription
+from models.lab_test import LabTest
+
+from lib.api import api_factory
 
 # Set logger
 log = logging.getLogger()
@@ -12,217 +21,96 @@ handler = logging.FileHandler('nmr.log')
 handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
 log.addHandler(handler)
 
-# Read env vars related to API connection
-NMR_API_URL = os.getenv("NMR_API_URL", "http://localhost:8000")
+
+def patient_api(nss: str, action: str):
+    return api_factory(action, patient_endpoint, {
+        'get': f"{nss}",
+        'post': '',
+        'patch': f"{nss}"
+    }, Patient)
 
 
-def printer(obj):
-    for k in obj.keys():
-        print(f"{k}: {obj[k]}")
-    print("=" * 50)
+def checkup_api(nss: str, action: str):
+    return api_factory(action, checkup_endpoint, {
+        'get': f"{nss}",
+        'post': '',
+    }, Checkup)
 
 
-def get_patient(nss):
-    suffix = f"/patient/{nss}"
-    endpoint = NMR_API_URL + suffix
-    response = requests.get(endpoint)
-    if response.ok:
-        json_resp = response.json()
-        printer(json_resp)
-    else:
-        print(f"Error: {response}")
+def prescription_api(nss: str, action: str):
+    return api_factory(action, prescription_endpoint, {
+        'get': f"{nss}",
+        'post': '',
+    }, Prescription)
 
 
-def post_patient():
-    suffix = "/patient"
-    endpoint = NMR_API_URL + suffix
-
-    assoc_checkup_suffix = "/patient/associate_checkup"
-    checkup_endpoint = NMR_API_URL + assoc_checkup_suffix
-
-    patient = {
-        "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-        "nombre": "Hector",
-        "apellidos": "Merino",
-        "edad": 35,
-        "fecha_de_nacimiento": "06/09/1998 00:00",
-        "ciudad_de_nacimiento": "Guadalajara",
-        "tipo_de_sangre": "A+",
-        "imc": 41.42,
-        "alergias": ["Gluten"],
-        "ultima_consulta": "29/09/2013 00:00",
-        "padecimientos": ["Cirrosis"],
-        "consultas": []
-    }
-    response = requests.post(endpoint, json=patient)
-    if response.ok:
-        print("Patient posted")
-        requests.post(checkup_endpoint, json=patient)
-    else:
-        print(f"Error: {response}")
+def lab_test_api(nss: str, action: str):
+    return api_factory(action, lab_test_endpoint, {
+        'get': f"{nss}",
+        'post': '',
+    }, LabTest)
 
 
-def update_patient(nss):
-    suffix = f"/patient/{nss}"
-    endpoint = NMR_API_URL + suffix
-    patient = {
-        "imc": 25.5
-    }
-    response = requests.put(endpoint, json=patient)
-    if response.ok:
-        print("Patient updated")
-    else:
-        print(f"Error: {response}")
-
-
-def get_checkup(nss):
-    suffix = f"/checkup/{nss}"
-    endpoint = NMR_API_URL + suffix
-    response = requests.get(endpoint)
-    if response.ok:
-        json_resp = response.json()
-        printer(json_resp)
-    else:
-        print(f"Error: {response}")
-
-
-def post_checkup():
-    suffix = "/checkup"
-    endpoint = NMR_API_URL + suffix
-
-    assoc_prescription_suffix = "/checkup/associate_prescription"
-    prescription_endpoint = NMR_API_URL + assoc_prescription_suffix
-
-    assoc_lab_test_suffix = "/checkup/associate_lab_test"
-    lab_test_endpoint = NMR_API_URL + assoc_lab_test_suffix
-
-    checkup = {
-        "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-        "fecha": "27/05/2022 00:00",
-        "medico_tratante": "Dr. Carmen Robledo",
-        "cedula_profesional": "57918810",
-        "diagnostico": "Gastritis",
-        "recetas": [],
-        "pruebas_de_laboratorio": []
-    }
-    response = requests.post(endpoint, json=checkup)
-    if response.ok:
-        print("Checkup posted")
-        requests.post(prescription_endpoint, json=checkup)
-        requests.post(lab_test_endpoint, json=checkup)
-    else:
-        print(f"Error: {response}")
-
-
-def get_prescription(nss):
-    suffix = f"/prescription/{nss}"
-    endpoint = NMR_API_URL + suffix
-    response = requests.get(endpoint)
-    if response.ok:
-        json_resp = response.json()
-        printer(json_resp)
-    else:
-        print(f"Error: {response}")
-
-
-def post_prescription():
-    suffix = "/prescription"
-    endpoint = NMR_API_URL + suffix
-
-    assoc_checkup_suffix = "/prescription/associate_checkup"
-    checkup_endpoint = NMR_API_URL + assoc_checkup_suffix
-
-    prescription = {
-        "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-        "consulta": "",
-        "medicamentos": [{
-            "nombre": "AMOXICILINA",
-            "dosis": 0,
-            "gramaje": 19,
-            "frecuencia": 65,
-            "duracion": 39
-        }]
-    }
-    response = requests.post(endpoint, json=prescription)
-    if response.ok:
-        print("Prescription posted")
-        requests.post(checkup_endpoint, json=prescription)
-    else:
-        print(f"Error: {response}")
-
-
-def get_lab_test(nss):
-    suffix = f"/lab_test/{nss}"
-    endpoint = NMR_API_URL + suffix
-    response = requests.get(endpoint)
-    if response.ok:
-        json_resp = response.json()
-        printer(json_resp)
-    else:
-        print(f"Error: {response}")
-
-
-def post_lab_test():
-    suffix = "/lab_test"
-    endpoint = NMR_API_URL + suffix
-
-    assoc_lab_test_suffix = "/lab_test/associate_checkup"
-    lab_test_endpoint = NMR_API_URL + assoc_lab_test_suffix
-
-    lab_test = {
-        "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
-        "consulta": "",
-        "pruebas": [{
-            "nombre": "Colesterol",
-            "fecha": "27/03/2022 00:00",
-            "url": "www.laboratorio.com/resultados"
-        }]
-    }
-
-    response = requests.post(endpoint, json=lab_test)
-    if response.ok:
-        print("Lab test posted")
-        requests.post(lab_test_endpoint, json=lab_test)
-    else:
-        print(f"Error: {response}")
+paciente = "paciente"
+consulta = "consulta"
+receta = "receta"
+prueba = "prueba"
 
 
 def main():
-    log.info(f"Historial Médico Nacional. App requests to: {NMR_API_URL}")
+    log.info(f"===== Historial Médico Nacional =====")
 
     parser = argparse.ArgumentParser()
 
-    list_of_actions = ["buscar paciente", "agregar paciente", "actualizar paciente",
-                       "buscar consulta", "agregar consulta", "buscar recetas",
-                       "agregar receta", "buscar resultados de laboratorio", "agregar prueba de laboratorio"]
-
+    # Actions
+    list_of_actions = ["buscar", "crear", "actualizar"]
     parser.add_argument("action",
                         choices=list_of_actions,
                         help="Acciones a realizar por la aplicación")
+
+    # Entities
+    list_of_entities = [paciente, consulta, receta, prueba]
+    parser.add_argument("entity",
+                        choices=list_of_entities,
+                        help="Entidad sobre la cual realizar la acción")
+
+    # Arguments
     parser.add_argument("-n", "--nss",
-                        help="Proporcionar un NSS relacionado con la acción que desea",
+                        help="Proporcionar un NSS relacionado con la acción",
                         default=None)
 
     args = parser.parse_args()
+    action = ''
 
-    if args.action == "buscar paciente" and args.nss:
-        get_patient(args.nss)
-    elif args.action == "agregar paciente":
-        post_patient()
-    elif args.action == "actualizar paciente" and args.nss:
-        update_patient(args.nss)
-    elif args.action == "buscar consulta" and args.nss:
-        get_checkup(args.nss)
-    elif args.action == "agregar consulta":
-        post_checkup()
-    elif args.action == "buscar recetas" and args.nss:
-        get_prescription(args.nss)
-    elif args.action == "agregar receta":
-        post_prescription()
-    elif args.action == "buscar resultados de laboratorio" and args.nss:
-        get_lab_test(args.nss)
-    elif args.action == "agregar prueba de laboratorio":
-        post_lab_test()
+    if args.action == "buscar":
+        action = 'get'
+
+        if not args.nss:
+            print('Para buscar, es necesario introducir un NSS')
+            return
+
+    if args.action == "crear":
+        action = 'post'
+
+    if args.action == "actualizar":
+        action = 'patch'
+
+        if args.entity != paciente:
+            print("No es posible actualizar otra entidad diferente a un paciente")
+            return
+
+    # Call endpoints
+    if args.entity == paciente:
+        patient_api(args.nss, action)
+
+    if args.entity == consulta:
+        checkup_api(args.nss, action)
+
+    if args.entity == receta:
+        prescription_api(args.nss, action)
+
+    if args.entity == prueba:
+        lab_test_api(args.nss, action)
 
 
 if __name__ == "__main__":

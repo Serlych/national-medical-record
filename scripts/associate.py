@@ -18,11 +18,11 @@ def main():
         for row in names_csv:
             patient_nss = row['nss']
 
-            checkup_res = get(checkup_endpoint, patient_nss)
+            checkup_res = get(f"{checkup_endpoint}/{patient_nss}")
             checkups = json.loads(checkup_res)
 
             for checkup_id in checkups:
-                post(patient_endpoint, {'nss': patient_nss, 'checkup_id': checkup_id}, 'associate_checkup')
+                post(f"{patient_endpoint}/associate_checkup", {'nss': patient_nss, 'checkup_id': checkup_id})
 
     # Associate prescription with checkup
     with open(f"data/{patient_endpoint}.csv") as fd:
@@ -34,16 +34,16 @@ def main():
             checkup_res = get(checkup_endpoint, patient_nss)
             checkups = json.loads(checkup_res)
 
-            prescription_res = get(prescription_endpoint, patient_nss)
+            prescription_res = get(f"{prescription_endpoint}/{patient_nss}")
             prescriptions = json.loads(prescription_res)
 
             checkup_id = checkups[0]
             prescription_id = prescriptions[0]
 
-            post(checkup_endpoint, {
+            post(f"{checkup_endpoint}/associate_prescription", {
                 'checkup_id': checkup_id,
                 'prescription_id': prescription_id
-            }, 'associate_prescription')
+            })
 
     # Associate lab test with checkup
     with open(f"data/{patient_endpoint}.csv") as fd:
@@ -52,7 +52,7 @@ def main():
         for row in names_csv:
             patient_nss = row['nss']
 
-            checkup_res = get(checkup_endpoint, patient_nss)
+            checkup_res = get(f"{checkup_endpoint}/{patient_nss}")
             checkups = json.loads(checkup_res)
 
             lab_test_res = get(lab_test_endpoint, patient_nss)
@@ -64,10 +64,10 @@ def main():
             checkup_id = checkups[0]
             lab_test_id = lab_tests[0]
 
-            post(checkup_endpoint, {
+            post(f"{checkup_endpoint}/associate_lab_test", {
                 'checkup_id': checkup_id,
                 'lab_test_id': lab_test_id
-            }, 'associate_lab_test')
+            })
 
     # Associate checkup with prescription
     with open(f"data/{patient_endpoint}.csv") as fd:
@@ -76,7 +76,7 @@ def main():
         for row in names_csv:
             patient_nss = row['nss']
 
-            checkup_res = get(checkup_endpoint, patient_nss)
+            checkup_res = get(f"{checkup_endpoint}/{patient_nss}")
             checkups = json.loads(checkup_res)
 
             prescription_res = get(prescription_endpoint, patient_nss)
@@ -88,10 +88,10 @@ def main():
             checkup_id = checkups[0]
             prescription_id = prescription_object_ids[0]
 
-            post(prescription_endpoint, {
+            post(f"{prescription_endpoint}/associate_checkup", {
                 'checkup_id': checkup_id,
                 'prescription_id': prescription_id
-            }, 'associate_checkup')
+            })
 
     # Associate checkup with lab test
     with open(f"data/{patient_endpoint}.csv") as fd:
@@ -100,7 +100,7 @@ def main():
         for row in names_csv:
             patient_nss = row['nss']
 
-            checkup_res = get(checkup_endpoint, patient_nss)
+            checkup_res = get(f"{checkup_endpoint}/{patient_nss}")
             checkups = json.loads(checkup_res)
 
             lab_test_res = get(lab_test_endpoint, patient_nss)
@@ -112,10 +112,10 @@ def main():
             checkup_id = checkups[0]
             lab_test_id = lab_tests[0]
 
-            post(lab_test_endpoint, {
+            post(f"{lab_test_endpoint}/associate_checkup", {
                 'checkup_id': checkup_id,
                 'lab_test_id': lab_test_id
-            }, 'associate_checkup')
+            })
 
 
 if __name__ == "__main__":

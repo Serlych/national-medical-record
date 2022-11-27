@@ -16,7 +16,7 @@ from routes.lab_test import coll as lab_test_endpoint
 
 DB_NAME = os.getenv('MONGODB_DB_NAME', 'national-medical-record')
 MONGODB_URI = os.getenv('MONGODB_URI', f'mongodb+srv://admin:admin@{DB_NAME}.34mgqxn.mongodb.net/test')
-BASE_URL = "http://localhost:8000"
+NMR_API_URL = os.getenv("NMR_API_URL", "http://localhost:8000")
 
 app = FastAPI()
 

@@ -2,7 +2,7 @@ from fastapi import Request
 from fastapi.encoders import jsonable_encoder
 from pymongo.results import InsertOneResult, UpdateResult
 from pymongo.typings import _DocumentType
-from typing import List, Any
+from typing import List
 
 
 def insert_one(request: Request, data, collection: str) -> InsertOneResult:

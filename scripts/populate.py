@@ -25,7 +25,6 @@ def main():
                 "tipo_de_sangre": row["tipo_de_sangre"],
                 "imc": row["imc"],
                 "alergias": row["alergias"].split(),
-                "ultima_consulta": row["ultima_consulta"],
                 "padecimientos": row["padecimientos"].split(),
                 "consultas": []
             }
