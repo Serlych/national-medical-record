@@ -5,7 +5,7 @@ from typing import List
 
 from lib.mongo import insert_one, find_one, update_one, find_many
 
-from models.checkup import Checkup
+from models.checkup import Checkup, CheckupUpdate
 
 router = APIRouter()
 coll = "checkup"
@@ -20,8 +20,7 @@ def find_checkups(request: Request, nss: str):
 
 @router.post("/", response_description="Create a new checkup", status_code=status.HTTP_201_CREATED,
              response_model=Checkup)
-def create_checkup(request: Request, checkup: Checkup = Body(...)):
-    print(checkup)
+def create_checkup(request: Request, checkup: CheckupUpdate = Body(...)):
     inserted = insert_one(request, checkup, coll)
     return find_one(request, {'_id': inserted.inserted_id}, coll)
 

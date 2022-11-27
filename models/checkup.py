@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class Checkup(BaseModel):
@@ -38,7 +38,16 @@ class CheckupUpdate(BaseModel):
     recetas: Optional[list]
     pruebas_de_laboratorio: Optional[list]
 
+    @validator('recetas', pre=True, always=True)
+    def set_recetas(cls, _):
+        return []
+
+    @validator('pruebas_de_laboratorio', pre=True, always=True)
+    def set_pruebas_de_laboratorio(cls, _):
+        return []
+
     class Config:
+        validate_assignment = True
         schema_extra = {
             "example": {
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",

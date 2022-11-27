@@ -6,7 +6,7 @@ from lib.input import input_handler
 
 def api(action: str, collection_url: str, available_endpoints: dict, model):
     data = input_handler(model)
-
+    print(data)
     endpoint = available_endpoints[action]
     url = f"{collection_url}/{endpoint}"
 

@@ -3,7 +3,7 @@ from fastapi import APIRouter, Body, Request, status
 
 from lib.mongo import find_one, insert_one, update_one
 
-from models.patient import Patient
+from models.patient import Patient, PatientUpdate
 
 router = APIRouter()
 coll = "patient"
@@ -11,14 +11,14 @@ coll = "patient"
 
 @router.get("/{nss}", response_description="Get a single patient", status_code=status.HTTP_200_OK,
             response_model=Patient)
-def find_patient(request: Request, nss: str):
+def get_patient(request: Request, nss: str):
     find_criteria = {"nss": nss}
     return find_one(request, find_criteria, coll)
 
 
 @router.post("/", response_description="Create a new patient", status_code=status.HTTP_201_CREATED,
              response_model=Patient)
-def create_patient(request: Request, patient: Patient = Body(...)):
+def create_patient(request: Request, patient: PatientUpdate = Body(...)):
     inserted = insert_one(request, patient, coll)
     return find_one(request, {'_id': inserted.inserted_id}, coll)
 

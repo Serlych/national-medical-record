@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class Patient(BaseModel):
@@ -14,7 +14,6 @@ class Patient(BaseModel):
     tipo_de_sangre: str = Field(...)
     imc: float = Field(...)
     alergias: list = Field(...)
-    ultima_consulta: str = Field(...)
     padecimientos: list = Field(...)
     consultas: list = Field(...)
 
@@ -32,7 +31,6 @@ class Patient(BaseModel):
                 "tipo_de_sangre": "A+",
                 "imc": 41.42,
                 "alergias": ["Gluten"],
-                "ultima_consulta": "29/09/2013 00:00",
                 "padecimientos": ["Cirrosis"],
                 "consultas": ["507f1f77bcf86cd799439011"]
             }
@@ -49,11 +47,15 @@ class PatientUpdate(BaseModel):
     tipo_de_sangre: Optional[str]
     imc: Optional[float]
     alergias: Optional[list]
-    ultima_consulta: Optional[str]
     padecimientos: Optional[list]
     consultas: Optional[list]
 
+    @validator('consultas', pre=True, always=True)
+    def set_consultas(cls, _):
+        return []
+
     class Config:
+        validate_assignment = True
         schema_extra = {
             "example": {
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",
@@ -65,8 +67,6 @@ class PatientUpdate(BaseModel):
                 "tipo_de_sangre": "A+",
                 "imc": 41.42,
                 "alergias": ["Gluten"],
-                "ultima_consulta": "29/09/2013 00:00",
                 "padecimientos": ["Cirrosis"],
-                "consultas": ["507f1f77bcf86cd799439011"]
             }
         }

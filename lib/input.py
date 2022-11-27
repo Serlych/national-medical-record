@@ -1,4 +1,4 @@
-excluded_fields = ["id", "ultima_consulta", "consultas", "recetas", "pruebas_de_laboratorio", "consulta"]
+excluded_fields = ["id", "consultas", "recetas", "pruebas_de_laboratorio", "consulta"]
 array_fields = ["alergias", "padecimientos"]
 multiple_input_fields = ["medicamentos", "pruebas"]
 
@@ -19,18 +19,24 @@ def input_handler(model):
             continue
 
         if key in array_fields:
-            inp = input(f"Capturar {key} separados/as por coma: ")
-            result[key] = inp.split(',')
+            result[key] = input(f"Capturar {key} separados/as por coma: ").split(',')
             continue
 
+        fields = []
         if key in multiple_input_fields:
             multi_input_keys = multi_fields_map[key]
             multi_result = {}
 
-            for multi_key in multi_input_keys:
-                multi_result[multi_key] = input(f"- Capturar {multi_key}: ")
+            repetitions = int(input(f"Introduce el número de {key} que quieres agregar: "))
 
-            result[key] = multi_result
+            for i in range(repetitions):
+                for multi_key in multi_input_keys:
+                    multi_result[multi_key] = input(f"- Capturar {multi_key}: ")
+
+                fields.append(multi_result)
+                print('-' * 10)
+
+            result[key] = fields
             continue
 
         result[key] = input(f"Capturar {key}: ")

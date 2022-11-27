@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class Prescription(BaseModel):
@@ -32,7 +32,12 @@ class PrescriptionUpdate(BaseModel):
     consulta: Optional[str]
     medicamentos: Optional[list]
 
+    @validator('consulta', pre=True, always=True)
+    def set_consulta(cls, _):
+        return ''
+
     class Config:
+        validate_assignment = True
         schema_extra = {
             "example": {
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",

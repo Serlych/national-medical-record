@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 
 class LabTest(BaseModel):
@@ -29,6 +29,10 @@ class LabTestUpdate(BaseModel):
     nss: Optional[str]
     consulta: Optional[str]
     pruebas: Optional[list]
+
+    @validator('consulta', pre=True, always=True)
+    def set_consulta(cls, _):
+        return ''
 
     class Config:
         schema_extra = {

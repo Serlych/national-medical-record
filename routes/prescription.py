@@ -20,7 +20,7 @@ def find_precriptions(request: Request, nss: str):
 
 @router.post("/", response_description="Create a new prescription", status_code=status.HTTP_201_CREATED,
              response_model=Prescription)
-def create_prescription(request: Request, prescription: Prescription = Body(...)):
+def create_prescription(request: Request, prescription: PrescriptionUpdate = Body(...)):
     inserted = insert_one(request, prescription, coll)
     return find_one(request, {'_id': inserted.inserted_id}, coll)
 
