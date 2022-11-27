@@ -32,58 +32,58 @@ def main():
 
             post(patient_endpoint, patient)
 
-    # # Colección de consultas
-    # with open(f"data/{checkup_endpoint}.csv") as fd:
-    #     checkups_csv = csv.DictReader(fd)
-    #
-    #     for row in checkups_csv:
-    #         checkup = {
-    #             "nss": row["nss"],
-    #             "fecha": row["fecha"],
-    #             "medico_tratante": row["medico_tratante"],
-    #             "cedula_profesional": row["cedula_profesional"],
-    #             "diagnostico": row["diagnostico"],
-    #             "recetas": [],
-    #             "pruebas_de_laboratorio": []
-    #         }
-    #
-    #         post(checkup_endpoint, checkup)
-    #
-    # # Colección de medicamentos
-    # with open(f"data/{prescription_endpoint}.csv") as fd:
-    #     prescriptions_csv = csv.DictReader(fd)
-    #
-    #     for row in prescriptions_csv:
-    #         prescription = {
-    #             "nss": row["nss"],
-    #             "consulta": "any",
-    #             "medicamentos": [{
-    #                 "nombre": row["nombre"],
-    #                 "dosis": float(row["dosis"]),
-    #                 "gramaje": int(row["gramaje"]),
-    #                 "frecuencia": int(row["frecuencia"]),
-    #                 "duracion": int(row["duracion"])
-    #             }]
-    #         }
-    #
-    #         post(prescription_endpoint, prescription)
-    #
-    # # Colección de pruebas clínicas
-    # with open(f"data/{lab_test_endpoint}.csv") as fd:
-    #     lab_tests_csv = csv.DictReader(fd)
-    #
-    #     for row in lab_tests_csv:
-    #         lab_test = {
-    #             "nss": row["nss"],
-    #             "consulta": "any",
-    #             "pruebas": [{
-    #                 "nombre": row["nombre"],
-    #                 "fecha": row["fecha"],
-    #                 "url": "cdn.lab-test-results.com/test_url"
-    #             }]
-    #         }
-    #
-    #         post(lab_test_endpoint, lab_test)
+    # Colección de consultas
+    with open(f"data/{checkup_endpoint}.csv") as fd:
+        checkups_csv = csv.DictReader(fd)
+
+        for row in checkups_csv:
+            checkup = {
+                "nss": row["nss"],
+                "fecha": row["fecha"],
+                "medico_tratante": row["medico_tratante"],
+                "cedula_profesional": row["cedula_profesional"],
+                "diagnostico": row["diagnostico"],
+                "recetas": [],
+                "pruebas_de_laboratorio": []
+            }
+
+            post(checkup_endpoint, checkup)
+
+    # Colección de medicamentos
+    with open(f"data/{prescription_endpoint}.csv") as fd:
+        prescriptions_csv = csv.DictReader(fd)
+
+        for row in prescriptions_csv:
+            prescription = {
+                "nss": row["nss"],
+                "consulta": "any",
+                "medicamentos": [{
+                    "nombre": row["nombre"],
+                    "dosis": float(row["dosis"]),
+                    "gramaje": int(row["gramaje"]),
+                    "frecuencia": int(row["frecuencia"]),
+                    "duracion": int(row["duracion"])
+                }]
+            }
+
+            post(prescription_endpoint, prescription)
+
+    # Colección de pruebas clínicas
+    with open(f"data/{lab_test_endpoint}.csv") as fd:
+        lab_tests_csv = csv.DictReader(fd)
+
+        for row in lab_tests_csv:
+            lab_test = {
+                "nss": row["nss"],
+                "consulta": "any",
+                "pruebas": [{
+                    "nombre": row["nombre"],
+                    "fecha": row["fecha"],
+                    "url": "cdn.lab-test-results.com/test_url"
+                }]
+            }
+
+            post(lab_test_endpoint, lab_test)
 
 
 if __name__ == "__main__":
