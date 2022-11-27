@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from fastapi import APIRouter, Body, Request, status
+from typing import List, Tuple
 
 from lib.mongo import find_one, insert_one, update_one
 

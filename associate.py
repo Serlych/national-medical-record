@@ -19,9 +19,9 @@ def main():
             patient_nss = row['nss']
 
             checkup_res = get(checkup_endpoint, patient_nss)
-            [_, checkup_object_ids] = json.loads(checkup_res)
+            checkups = json.loads(checkup_res)
 
-            for checkup_id in checkup_object_ids:
+            for checkup_id in checkups:
                 post(patient_endpoint, {'nss': patient_nss, 'checkup_id': checkup_id}, 'associate_checkup')
 
     # Associate prescription with checkup
@@ -32,13 +32,13 @@ def main():
             patient_nss = row['nss']
 
             checkup_res = get(checkup_endpoint, patient_nss)
-            [_, checkup_object_ids] = json.loads(checkup_res)
+            checkups = json.loads(checkup_res)
 
             prescription_res = get(prescription_endpoint, patient_nss)
-            [_, prescription_object_ids] = json.loads(prescription_res)
+            prescriptions = json.loads(prescription_res)
 
-            checkup_id = checkup_object_ids[0]
-            prescription_id = prescription_object_ids[0]
+            checkup_id = checkups[0]
+            prescription_id = prescriptions[0]
 
             post(checkup_endpoint, {
                 'checkup_id': checkup_id,
@@ -53,16 +53,16 @@ def main():
             patient_nss = row['nss']
 
             checkup_res = get(checkup_endpoint, patient_nss)
-            [_, checkup_object_ids] = json.loads(checkup_res)
+            checkups = json.loads(checkup_res)
 
             lab_test_res = get(lab_test_endpoint, patient_nss)
-            [_, lab_test_object_ids] = json.loads(lab_test_res)
+            lab_tests = json.loads(lab_test_res)
 
-            if len(lab_test_object_ids) == 0:
+            if len(lab_tests) == 0:
                 continue
 
-            checkup_id = checkup_object_ids[0]
-            lab_test_id = lab_test_object_ids[0]
+            checkup_id = checkups[0]
+            lab_test_id = lab_tests[0]
 
             post(checkup_endpoint, {
                 'checkup_id': checkup_id,
@@ -77,7 +77,7 @@ def main():
             patient_nss = row['nss']
 
             checkup_res = get(checkup_endpoint, patient_nss)
-            [_, checkup_object_ids] = json.loads(checkup_res)
+            checkups = json.loads(checkup_res)
 
             prescription_res = get(prescription_endpoint, patient_nss)
             [_, prescription_object_ids] = json.loads(prescription_res)
@@ -85,7 +85,7 @@ def main():
             if len(prescription_object_ids) == 0:
                 continue
 
-            checkup_id = checkup_object_ids[0]
+            checkup_id = checkups[0]
             prescription_id = prescription_object_ids[0]
 
             post(prescription_endpoint, {
@@ -101,16 +101,16 @@ def main():
             patient_nss = row['nss']
 
             checkup_res = get(checkup_endpoint, patient_nss)
-            [_, checkup_object_ids] = json.loads(checkup_res)
+            checkups = json.loads(checkup_res)
 
             lab_test_res = get(lab_test_endpoint, patient_nss)
-            [_, lab_test_object_ids] = json.loads(lab_test_res)
+            lab_tests = json.loads(lab_test_res)
 
-            if len(lab_test_object_ids) == 0:
+            if len(lab_tests) == 0:
                 continue
 
-            checkup_id = checkup_object_ids[0]
-            lab_test_id = lab_test_object_ids[0]
+            checkup_id = checkups[0]
+            lab_test_id = lab_tests[0]
 
             post(lab_test_endpoint, {
                 'checkup_id': checkup_id,

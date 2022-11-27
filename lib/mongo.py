@@ -2,7 +2,7 @@ from fastapi import Request
 from fastapi.encoders import jsonable_encoder
 from pymongo.results import InsertOneResult, UpdateResult
 from pymongo.typings import _DocumentType
-from typing import List, Optional
+from typing import List, Any
 
 
 def insert_one(request: Request, data, collection: str) -> InsertOneResult:
@@ -10,15 +10,22 @@ def insert_one(request: Request, data, collection: str) -> InsertOneResult:
     return request.app.database[collection].insert_one(to_insert)
 
 
-def find_one(request: Request, criteria: dict, collection: str) -> Optional[_DocumentType]:
-    return request.app.database[collection].find_one(criteria)
+def find_one(request: Request, criteria: dict, collection: str) -> _DocumentType:
+    find_result = request.app.database[collection].find_one(criteria)
+    copy = find_result.copy()
+    copy['id'] = str(find_result['_id'])
+
+    return copy
 
 
-def find_many(request: Request, criteria: dict, collection: str) -> [List[_DocumentType], List]:
+def find_many(request: Request, criteria: dict, collection: str) -> list[_DocumentType]:
     cursor = list(request.app.database[collection].find(criteria))
-    object_ids = [str(item['_id']) for item in cursor]
+    copy = cursor.copy()
 
-    return [cursor, object_ids]
+    for item in copy:
+        item['id'] = str(item['_id'])
+
+    return copy
 
 
 def update_one(request: Request, find_criteria: dict, update_criteria: dict, collection: str) -> UpdateResult:

@@ -12,7 +12,7 @@ coll = "lab_test"
 
 
 @router.get("/{nss}", response_description="Get all lab tests for a patient", status_code=status.HTTP_200_OK,
-            response_model=Tuple[List[LabTest], List[str]])
+            response_model=List[LabTest])
 def find_lab_tests(request: Request, nss: str):
     find_criteria = {"nss": nss}
     return find_many(request, find_criteria, coll)
