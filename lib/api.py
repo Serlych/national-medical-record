@@ -1,7 +1,7 @@
 import json
 
 from lib.http import get, post, patch
-from lib.input import input_handler
+from lib.input import input_handler, filter_empty
 
 
 def api(action: str, collection_url: str, available_endpoints: dict, model):
@@ -16,7 +16,8 @@ def api(action: str, collection_url: str, available_endpoints: dict, model):
 
     data = None
     if action != 'get':
-        data = input_handler(model)
+        data = input_handler(model, action)
+        data = filter_empty(data)
 
     response = handler[action](endpoint=url, data=data)
     deserialized_response = json.loads(response)

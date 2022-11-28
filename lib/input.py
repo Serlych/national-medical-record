@@ -1,4 +1,4 @@
-excluded_fields = ["id", "consultas", "recetas", "pruebas_de_laboratorio", "consulta"]
+excluded_fields = ["id", "consultas", "recetas", "pruebas_de_laboratorio", "consulta", "nss"]
 array_fields = ["alergias", "padecimientos"]
 multiple_input_fields = ["medicamentos", "pruebas"]
 
@@ -8,8 +8,23 @@ multi_fields_map = {
 }
 
 
-def input_handler(model):
-    print(f"==== {model.__name__}: =====")
+def filter_empty(dic: dict):
+    keys = list(dic.keys())
+    result = {}
+
+    for k in keys:
+        value = dic[k]
+
+        if value == '' or value == [''] or value == [] or value is None:
+            continue
+
+        result[k] = value
+
+    return result
+
+
+def input_handler(model, action):
+    print(f"{'-' * 5} {action} {str(model.__name__).lower()}: {'-' * 5}")
 
     keys = list(model.__fields__.keys())
     result = {}

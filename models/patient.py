@@ -54,6 +54,14 @@ class PatientUpdate(BaseModel):
     def set_consultas(cls, _):
         return []
 
+    # @validator('edad', pre=True, always=True)
+    # def set_edad(cls, edad):
+    #     return edad or 0
+    #
+    # @validator('imc', pre=True, always=True)
+    # def set_imc(cls, imc):
+    #     return imc or 0
+
     class Config:
         validate_assignment = True
         schema_extra = {

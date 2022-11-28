@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Body, Request, status
 
 from lib.mongo import find_one, insert_one, update_one
+from lib.input import filter_empty
 
 from models.patient import Patient, PatientUpdate
 
@@ -21,6 +22,23 @@ def get_patient(request: Request, nss: str):
 def create_patient(request: Request, patient: PatientUpdate = Body(...)):
     inserted = insert_one(request, patient, coll)
     return find_one(request, {'_id': inserted.inserted_id}, coll)
+
+
+@router.patch("/{nss}", response_description="Update an existing patient", status_code=status.HTTP_200_OK,
+              response_model=Patient)
+def update_patient(request: Request, nss: str, patient: PatientUpdate = Body(...)):
+    patient_find_criteria = {"nss": nss}
+    patient_dict = filter_empty(patient.dict())
+    keys = patient_dict.keys()
+
+    for key in keys:
+        update_one(request, patient_find_criteria, {
+            "$set": {
+                f"{key}": patient_dict[key]
+            }
+        }, coll)
+
+    return find_one(request, patient_find_criteria, coll)
 
 
 @router.post("/associate_checkup", response_description="Adds a single checkup to the list of a patient's checkups",
