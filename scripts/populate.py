@@ -26,7 +26,6 @@ def main():
                 "imc": row["imc"],
                 "alergias": row["alergias"].split(),
                 "padecimientos": row["padecimientos"].split(),
-                "consultas": []
             }
 
             post(patient_endpoint, patient)
@@ -64,7 +63,7 @@ def main():
         for row in prescriptions_csv:
             prescription = {
                 "nss": row["nss"],
-                "consulta": "any",
+                "consulta": "507f1f77bcf86cd799439011",
                 "medicamentos": [{
                     "nombre": row["nombre"],
                     "dosis": float(row["dosis"]),
@@ -83,7 +82,7 @@ def main():
         for row in lab_tests_csv:
             lab_test = {
                 "nss": row["nss"],
-                "consulta": "any",
+                "consulta": "507f1f77bcf86cd799439011",
                 "pruebas": [{
                     "nombre": row["nombre"],
                     "fecha": row["fecha"],

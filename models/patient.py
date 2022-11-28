@@ -15,7 +15,6 @@ class Patient(BaseModel):
     imc: float = Field(...)
     alergias: list = Field(...)
     padecimientos: list = Field(...)
-    consultas: list = Field(...)
 
     class Config:
         allow_population_by_field_name = True
@@ -32,7 +31,6 @@ class Patient(BaseModel):
                 "imc": 41.42,
                 "alergias": ["Gluten"],
                 "padecimientos": ["Cirrosis"],
-                "consultas": ["507f1f77bcf86cd799439011"]
             }
         }
 
@@ -48,22 +46,8 @@ class PatientUpdate(BaseModel):
     imc: Optional[float]
     alergias: Optional[list]
     padecimientos: Optional[list]
-    consultas: Optional[list]
-
-    @validator('consultas', pre=True, always=True)
-    def set_consultas(cls, _):
-        return []
-
-    # @validator('edad', pre=True, always=True)
-    # def set_edad(cls, edad):
-    #     return edad or 0
-    #
-    # @validator('imc', pre=True, always=True)
-    # def set_imc(cls, imc):
-    #     return imc or 0
 
     class Config:
-        validate_assignment = True
         schema_extra = {
             "example": {
                 "nss": "68c9eb13-a596-43ec-a5d4-984fe0a42f9e",

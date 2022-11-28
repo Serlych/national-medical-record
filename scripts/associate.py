@@ -11,19 +11,6 @@ from lib.http import get, post
 
 
 def main():
-    # Associate checkups with patient
-    with open(f"data/{patient_endpoint}.csv") as fd:
-        names_csv = csv.DictReader(fd)
-
-        for row in names_csv:
-            patient_nss = row['nss']
-
-            checkup_res = get(f"{checkup_endpoint}/{patient_nss}")
-            checkups = json.loads(checkup_res)
-
-            for checkup_id in checkups:
-                post(f"{patient_endpoint}/associate_checkup", {'nss': patient_nss, 'checkup_id': checkup_id})
-
     # Associate prescription with checkup
     with open(f"data/{patient_endpoint}.csv") as fd:
         names_csv = csv.DictReader(fd)

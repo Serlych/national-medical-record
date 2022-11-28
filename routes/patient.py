@@ -39,16 +39,3 @@ def update_patient(request: Request, nss: str, patient: PatientUpdate = Body(...
         }, coll)
 
     return find_one(request, patient_find_criteria, coll)
-
-
-@router.post("/associate_checkup", response_description="Adds a single checkup to the list of a patient's checkups",
-             status_code=status.HTTP_201_CREATED, response_model=Patient)
-def associate_checkup_with_patient(request: Request, data=Body(...)):
-    patient_find_criteria = {"nss": data['nss']}
-    update_one(request, patient_find_criteria, {
-        "$push": {
-            "consultas": data['checkup_id']
-        }
-    }, coll)
-
-    return find_one(request, patient_find_criteria, coll)

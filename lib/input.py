@@ -1,4 +1,4 @@
-excluded_fields = ["id", "consultas", "recetas", "pruebas_de_laboratorio", "consulta", "nss"]
+excluded_fields = ["id", "recetas", "pruebas_de_laboratorio", "consulta", "nss"]
 array_fields = ["alergias", "padecimientos"]
 multiple_input_fields = ["medicamentos", "pruebas"]
 
