@@ -30,6 +30,7 @@ def create_prescription(request: Request, prescription: PrescriptionUpdate = Bod
              status_code=status.HTTP_200_OK,
              response_model=Prescription)
 def associate_checkup_with_prescription(request: Request, data=Body(...)):
+    print(data)
     prescription_find_criteria = {"_id": ObjectId(data['prescription_id'])}
     update_one(request, prescription_find_criteria, {
         "$set": {

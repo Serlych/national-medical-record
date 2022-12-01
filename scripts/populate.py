@@ -63,7 +63,7 @@ def main():
         for row in prescriptions_csv:
             prescription = {
                 "nss": row["nss"],
-                "consulta": "507f1f77bcf86cd799439011",
+                "consulta": "",
                 "medicamentos": [{
                     "nombre": row["nombre"],
                     "dosis": float(row["dosis"]),
@@ -82,7 +82,7 @@ def main():
         for row in lab_tests_csv:
             lab_test = {
                 "nss": row["nss"],
-                "consulta": "507f1f77bcf86cd799439011",
+                "consulta": "",
                 "pruebas": [{
                     "nombre": row["nombre"],
                     "fecha": row["fecha"],

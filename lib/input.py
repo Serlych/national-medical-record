@@ -1,4 +1,4 @@
-excluded_fields = ["id", "recetas", "pruebas_de_laboratorio", "consulta", "nss"]
+excluded_fields = ["id", "recetas", "pruebas_de_laboratorio", "consulta"]
 array_fields = ["alergias", "padecimientos"]
 multiple_input_fields = ["medicamentos", "pruebas"]
 
@@ -15,7 +15,7 @@ def filter_empty(dic: dict):
     for k in keys:
         value = dic[k]
 
-        if value == '' or value == [''] or value == [] or value is None:
+        if value == '' or value == [''] or value == [] or value is None or k == 'nss':
             continue
 
         result[k] = value
